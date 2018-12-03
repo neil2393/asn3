@@ -8,19 +8,26 @@ table, th, td {
 }
 </style>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/js/materialize.min.js"></script>
 <script>
- (function($) {
-   $(function() {
-
-     $('.button-collapse').sideNav();
-     $('select').material_select();
-     $('.dropdown-button').dropdown();
-
-   }); // end of document ready
- })(jQuery); // end of jQuery name space
+$(document).ready(function(){
+ $('.dropdown-button').dropdown({
+      hover: true, // Activate on hover
+    }
+  );
+});
 </script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+<!-- Dropdown Trigger -->
+<a class='dropdown-trigger btn' href='#' data-target='dropdown1'>Drop Me!</a>
+
+<!-- Dropdown Structure -->
+<ul id='dropdown1' class='dropdown-content'>
+<li><a href="#!">one</a></li>
+<li><a href="#!">two</a></li>
+<li class="divider" tabindex="-1"></li>
+<li><a href="#!">three</a></li>
+</ul>
 </head>
 
 
@@ -50,16 +57,6 @@ include 'getcustomerdata.php';
 ?>
 <h5>Products that a customer has purchased:</h5>
 
-<!-- Dropdown Trigger -->
-<a class='dropdown-trigger btn' href='#' data-target='dropdown1'>Drop Me!</a>
-
-<!-- Dropdown Structure -->
-<ul id='dropdown1' class='dropdown-content'>
-<li><a href="#!">one</a></li>
-<li><a href="#!">two</a></li>
-<li class="divider" tabindex="-1"></li>
-<li><a href="#!">three</a></li>
-</ul>
 
 <div class="row">
 <div class="col s12 m6">
