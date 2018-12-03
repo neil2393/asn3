@@ -31,7 +31,7 @@ table, th, td {
 <?php
 include 'connectdb.php';
 ?> 
-<h4>Customer Information:</h2>
+<h5>Customer Information:</h2>
 <?php
 include 'getcustomerdata.php';
 ?>
