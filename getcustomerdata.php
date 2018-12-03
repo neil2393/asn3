@@ -7,7 +7,7 @@ if (!$result) {
 echo "<table>";
 while ($row = mysqli_fetch_assoc($result)) {
     echo "<tr>";
-    echo "<tr><th>First Name</th><th>Last Name</th><th>City</th><th>Phone Number</th><th>Customer ID</th><th>Agent ID</th></tr>"
+    echo "<tr><th>First Name</th><th>Last Name</th><th>City</th><th>Phone Number</th><th>Customer ID</th><th>Agent ID</th></tr>";
     echo "<td>" . $row["firstName"] . "</td><td>" . $row["lastName"] . "</td><td>" . $row["city"] . "</td><td>" . $row["phoneNumber"] . "</td><td>" . $row["customerId"] . "</td><td>" . $row["agentId"] . "</td>";
     echo "</tr>";
 }
