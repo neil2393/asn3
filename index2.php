@@ -50,7 +50,6 @@ include 'getcustomerdata.php';
 <li><a href="#!"><i class="material-icons">view_module</i>four</a></li>
 <li><a href="#!"><i class="material-icons">cloud</i>five</a></li>
 </ul>
-</script>
 
 <div class="row">
 <div class="col s12 m6">
