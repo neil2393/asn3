@@ -34,10 +34,19 @@ include 'connectdb.php';
 <h5>Customer Information:</h5>
 <?php
 include 'getcustomerdata.php';
+
+$('.dropdown-button').dropdown({
+  inDuration: 300,
+  outDuration: 225,
+  constrain_width: false, // Does not change width of dropdown to that of the activator
+  hover: true, // Activate on hover
+  gutter: 0, // Spacing from edge
+  belowOrigin: false // Displays dropdown below the button
+}
+);
 ?>
 <h5>Products that a customer has purchased:</h5>
 
-<script type ="text/javascript" src="init.js"></script>
 <!-- Dropdown Trigger -->
 <a class='dropdown-trigger btn' href='#' data-target='dropdown1'>Drop Me!</a>
 
