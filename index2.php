@@ -31,12 +31,13 @@ table, th, td {
 <?php
 include 'connectdb.php';
 ?> 
-<h5>Customer Information:</h2>
+<h5>Customer Information:</h5>
 <?php
 include 'getcustomerdata.php';
 ?>
-<h5>Products that a customer has purchased:</h2>
+<h5>Products that a customer has purchased:</h5>
 
+<script type ="text/javascript" src="init.js"></script>
 <!-- Dropdown Trigger -->
 <a class='dropdown-trigger btn' href='#' data-target='dropdown1'>Drop Me!</a>
 
@@ -49,7 +50,7 @@ include 'getcustomerdata.php';
 <li><a href="#!"><i class="material-icons">view_module</i>four</a></li>
 <li><a href="#!"><i class="material-icons">cloud</i>five</a></li>
 </ul>
-
+</script>
 
 <div class="row">
 <div class="col s12 m6">
