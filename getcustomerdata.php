@@ -8,7 +8,7 @@ echo "<table>";
 while ($row = mysqli_fetch_assoc($result)) {
     echo "<tr>";
     echo "<td>" . $row["firstName"] . "</th><td>" . $row["lastName"] . "</th><td>" . $row["city"] . "</th><td>" . $row["phoneNumber"] . "</th><td>" . $row["customerId"] . "</th><td>" . $row["agentId"] . "</td>";
-    echo "</tr>"
+    echo "</tr>";
 }
 mysqli_free_result($result);
 echo "</table>";
