@@ -19,9 +19,11 @@ table, th, td {
 <div class="nav-wrapper">
   <a href="#" class="brand-logo">CS3319 Assignment Neil Patel</a>
   <ul id="nav-mobile" class="right hide-on-med-and-down">
-//    <li><a href="sass.html">Sass</a></li>
-//    <li><a href="badges.html">Components</a></li>
-//    <li><a href="collapsible.html">JavaScript</a></li>
+<!--
+    <li><a href="sass.html">Sass</a></li>
+    <li><a href="badges.html">Components</a></li>
+    <li><a href="collapsible.html">JavaScript</a></li>
+-->
   </ul>
 </div>
 </nav>
@@ -29,12 +31,11 @@ table, th, td {
 <?php
 include 'connectdb.php';
 ?> 
-<h2>CS3319 Assignment 3</h1>
-<h3>Customer Information:</h2>
+<h4>Customer Information:</h2>
 <?php
 include 'getcustomerdata.php';
 ?>
-<h3>Products that a customer has purchased:</h2>
+<h5>Products that a customer has purchased:</h2>
 
 <div class="row">
 <div class="col s12 m6">
