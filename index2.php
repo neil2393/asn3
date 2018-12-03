@@ -22,12 +22,13 @@ include 'getcustomerdata.php';
 </body>
 </html>
 
-#ssh -i ~/.ssh/cs3319-vm144.pem vm144@cs3319.gaul.csd.uwo.ca
-#ssh centos@vm144
-#mysql -u root -p
-#cd /var/www/html
-
 /*
+ssh -i ~/.ssh/cs3319-vm144.pem vm144@cs3319.gaul.csd.uwo.ca
+ssh centos@vm144
+mysql -u root -p
+cd /var/www/html
+
+
 git add .
 git commit -m "push scripts files"
 git push origin master
