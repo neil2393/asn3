@@ -15,12 +15,12 @@ table, th, td {
 <?php
 include 'connectdb.php';
 ?> 
-<h1>CS3319 Assignment 3</h1>
-<h2>Customer Information:</h2>
+<h2>CS3319 Assignment 3</h1>
+<h3>Customer Information:</h2>
 <?php
 include 'getcustomerdata.php';
 ?>
-<h2>Products that a customer has purchased:</h2>
+<h3>Products that a customer has purchased:</h2>
 
 <div class="row">
 <div class="col s12 m6">
