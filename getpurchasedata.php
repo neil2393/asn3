@@ -39,7 +39,7 @@
 
     <br>
     <?php
-      echo "<blockquote><h5>Customer " . $customerId . "Purchase Information:</h5></blockquote>"
+      echo "<blockquote><h5>Customer " . $customerId . " Purchase Information:</h5></blockquote>"
     ?>
     <div class="row">
       <div class="col s12 m6">
