@@ -42,7 +42,7 @@
               $selected_category = $_GET['category'];
               $_SESSION['selected_category'] = $_GET['category'];
 
-              $query = "SELECT * FROM products, purchases WHERE products.productId = purchases.productId";
+              $query = "SELECT * FROM products, purchases, customers WHERE products.productId = purchases.productId AND purchases.customerId = customers.customerId AND customers.customerId = " . $selected_category;
               //$query .= "customers.customerId = " . $selected_category . "))";
               $result = mysqli_query($connection,$query);
               if (!$result) {
