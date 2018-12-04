@@ -22,12 +22,15 @@
       <div class="col s12 m6">
         <div class="card blue-grey darken-1">
           <div class="card-content white-text">
-            <script>
+
+            <div id="divTest1"></div>
+            <script type="text/javascript">
               var link = $('a').attr('href');
               var equalPosition = link.indexOf('='); //Get the position of '='
               var number = link.substring(equalPosition + 1);
-              console.log(number, "Hello, world!");
+            $("#divTest1").text(number);
             </script>
+
             <?php
               include 'connectdb.php';
 
