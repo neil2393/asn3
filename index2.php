@@ -112,6 +112,7 @@
                   <input name="quantity" type="text" class="validate">
                   <label for="quantity">Quantity</label>
                   </div>
+                  <br>
               <button class="btn waves-effect waves-light" type="submit" name="action">Submit
                 <i class="material-icons right">send</i>
               </button>
