@@ -81,9 +81,10 @@
          die("databases query failed.");
     }
     echo "<select name='mySelect'>";
-    while   ( $query_array = mysql_fetch_array( $query_run ) ) {
+/*    while   ( $query_array = mysql_fetch_array( $query_run ) ) {
         echo "<option value='".$query_array['customerId']."' >".$query_array['customerId']."</option>";                        
     }
+*/
     echo "</select>";
     mysqli_free_result($result);
     mysqli_close($connection);
