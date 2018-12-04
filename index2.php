@@ -57,7 +57,7 @@
           </div>
           <div class="card-action">
               <!-- Dropdown Trigger -->
-              <a class='dropdown-button btn' href='' data-activates='dropdown1'>Customer ID</a>
+              <a class='dropdown-button btn' href='#' data-activates='dropdown1'>Customer ID</a>
               <!-- Dropdown Structure -->
               <ul id='dropdown1' class='dropdown-content'>
                 <li><a href="getpurchasedata.php?customerId=31">31</a></li>
