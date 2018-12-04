@@ -16,7 +16,6 @@
   </head>
 
   <body>
-
     <nav>
     <div class="nav-wrapper grey darken-3">
       <a href="#" class="brand-logo center">CS3319 Assignment 3 Neil Patel</a>
@@ -40,7 +39,7 @@
               session_start();
               include 'connectdb.php';
 
-              $selected_category = $_GET['category']; // Get 'Table'
+              $selected_category = $_GET['category'];
               $_SESSION['selected_category'] = $_GET['category'];
 
               $query = "SELECT * FROM products WHERE productId IN (SELECT purchases.productId FROM purchases, customers WHERE purchases.customerId = customers.customerId AND ";
