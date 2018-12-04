@@ -47,7 +47,7 @@
               $result = mysqli_query($connection, $query);
               if (!$result) {
                   die("Error<br>" . mysqli_error($connection));
-                  echo "<a class="waves-effect waves-light btn" href="index2.php">Go Back</a>"
+                  echo "<a class="waves-effect waves-light btn" href="index2.php">Go Back</a>";
               }
               while ($row = mysqli_fetch_assoc($result)) {
                   // If purchase exists, value of $purchase_exists will be > 0
@@ -62,6 +62,7 @@
                       $query = 'UPDATE purchases SET quantity = ' . $quantity . ' WHERE customerId = '. $customerId . ' AND productId = ' . $productId . 'AND quantity < ' . $quantity;
                       if (!mysqli_query($connection, $query)) {
                           die("Error - You can only enter larger quantities.<br>" . mysqli_error($connection));
+                          echo "<a class="waves-effect waves-light btn" href="index2.php">Go Back</a>";
                       }
                       echo "Your new purchase was successfuly updated.";
                   }
