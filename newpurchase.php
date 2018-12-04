@@ -67,7 +67,7 @@
                   }
                   else {
                     //  echo "Quantity should be positive!";
-                      echo "Error"
+                      echo "Error";
                   }
               }
               // Otherwise, insert values into purchases
@@ -118,8 +118,6 @@
         </div>
       </div>
     </div>
-
-
 
     <a class="waves-effect waves-light btn" href="index2.php">Go Back</a>
   </body>
