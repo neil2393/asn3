@@ -47,8 +47,6 @@
         </div>
       </div>
 
-
-      <br>
       <blockquote><h5>Products that a customer has purchased:</h5></blockquote>
       <div class="row">
         <div class="col s12 m6">
