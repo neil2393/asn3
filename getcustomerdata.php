@@ -2,7 +2,7 @@
 $query = "SELECT * FROM customers ORDER BY lastName";
 $result = mysqli_query($connection,$query);
 if (!$result) {
-     die("databases query failed.");
+    die("databases query failed.");
 }
 echo "<table>";
 echo "<tr><th>Customer ID</th><th>First Name</th><th>Last Name</th><th>City</th><th>Phone Number</th><th>Agent ID</th></tr>";
