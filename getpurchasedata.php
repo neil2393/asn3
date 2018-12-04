@@ -29,6 +29,14 @@
     </div>
     </nav>
 
+    <?php
+      session_start();
+      include 'connectdb.php';
+      
+      $selected_category = $_GET['category'];
+      $_SESSION['selected_category'] = $_GET['category'];
+    ?>
+
     <br>
     <blockquote><h5>Customer Purchase Information:</h5></blockquote>
     <div class="row">
@@ -36,12 +44,6 @@
         <div class="card blue-grey darken-1">
           <div class="card-content white-text">
             <?php
-              session_start();
-              include 'connectdb.php';
-
-              $selected_category = $_GET['category'];
-              $_SESSION['selected_category'] = $_GET['category'];
-
               $query = "SELECT * FROM products, purchases, customers WHERE products.productId = purchases.productId AND purchases.customerId = customers.customerId AND customers.customerId = " . $selected_category;
               //$query .= "customers.customerId = " . $selected_category . "))";
               $result = mysqli_query($connection,$query);
