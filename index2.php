@@ -73,9 +73,18 @@
       </div>
     </div>
 
-    <?php
-      include 'getcustomerdata.php';
-    ?>
+    <form action="getpurchasedata.php" method="post">
+        <?php
+        $query = "SELECT customerId FROM customers";
+        $query_run = mysql_query( $query );
+        echo "<select name='mySelect'>";
+        while   ( $query_array = mysql_fetch_array( $query_run ) ) {
+            echo "<option value='".$query_array['customerId']."' >".$query_array['customerId']."</option>";                        
+        }
+        echo "</select>";
+        ?>
+        <input type="submit" name="submit"/>
+    </form>
 
   </body>
 </html>
