@@ -19,7 +19,7 @@
 
     <nav>
     <div class="nav-wrapper blue-grey darken-1">
-      <a href="#" class="brand-logo">CS3319 Assignment 3 Neil Patel</a>
+      <a href="#" class="brand-logo"> CS3319 Assignment 3 Neil Patel</a>
       <ul id="nav-mobile" class="right hide-on-med-and-down">
     <!--
         <li><a href="sass.html">Sass</a></li>
@@ -35,7 +35,7 @@
     ?> 
 
     <br>
-    <h5>Customer Information:</h5>
+    <h5> Customer Information:</h5>
     <div class="row">
       <div class="col s12 m6">
         <div class="card blue-grey darken-1">
@@ -48,7 +48,7 @@
       </div>
     </div>
 
-    <h5>Products that a customer has purchased:</h5>
+    <h5> Products that a customer has purchased:</h5>
     <div class="row">
       <div class="col s12 m6">
         <div class="card blue-grey darken-1">
