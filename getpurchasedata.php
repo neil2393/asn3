@@ -23,6 +23,8 @@
         <div class="card blue-grey darken-1">
           <div class="card-content white-text">
             <?php
+            include 'connectdb.php';
+
             $query = "SELECT * FROM customers ORDER BY lastName";
             $result = mysqli_query($connection,$query);
             if (!$result) {
