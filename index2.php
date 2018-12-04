@@ -106,7 +106,7 @@
                 <input id="last_name" type="text" class="validate">
                 <label for="last_name">Last Name</label>
                 </div>
-              <p> </p>
+              <p>Sort</p>
             </div>
           </div>
         </div>
