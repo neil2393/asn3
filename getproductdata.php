@@ -45,19 +45,19 @@
 
               if ($selected_category == "ascDesc")
               {
-                $query .= "productDescription ASC"
+                $query .= "productDescription ASC";
               }
               elseif ($selected_category == "descDesc")
               {
-                $query .= "productDescription DESC"
+                $query .= "productDescription DESC";
               }
               elseif ($selected_category == "ascPrice")
               {
-                $query .= "costPerItem ASC"
+                $query .= "costPerItem ASC";
               }
               elseif ($selected_category == "descPrice")
               {
-                $query .= "costPerItem DESC"
+                $query .= "costPerItem DESC";
               }
 
               $result = mysqli_query($connection,$query);
