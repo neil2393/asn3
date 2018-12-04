@@ -34,6 +34,7 @@
     include 'connectdb.php';
     ?> 
 
+    <br>
     <h5>Customer Information:</h5>
     <div class="row">
       <div class="col s12 m6">
@@ -52,19 +53,21 @@
       <div class="col s12 m6">
         <div class="card blue-grey darken-1">
           <div class="card-content white-text">
-            <span class="card-title">Card Title</span>
-            <p>I am a very simple card. I am good at containing small bits of information.
-            I am convenient because I require little markup to use effectively.</p>
+            <span class="card-title">Customer Purchase Information</span>
+            <p>Choose a customer ID to see all of their purchases</p>
           </div>
           <div class="card-action">
               <!-- Dropdown Trigger -->
-              <a class='dropdown-button btn' href='#' data-activates='dropdown1'>Drop Me!</a>
+              <a class='dropdown-button btn' href='#' data-activates='dropdown1'>Customer ID</a>
               <!-- Dropdown Structure -->
               <ul id='dropdown1' class='dropdown-content'>
-                <li><a href="#!">one</a></li>
-                <li><a href="#!">two</a></li>
-                <li class="divider"></li>
-                <li><a href="#!">three</a></li>
+                <li><a href="#!">31</a></li>
+                <li><a href="#!">12</a></li>
+                <li><a href="#!">15</a></li>
+                <li><a href="#!">14</a></li>
+                <li><a href="#!">10</a></li>
+                <li><a href="#!">21</a></li>
+                <li><a href="#!">13</a></li>
               </ul>
           </div>
         </div>
