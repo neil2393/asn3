@@ -73,13 +73,13 @@
       </div>
     </div>
 
-    <form action="page.php" method="post">
+    <form action="getpurchasedata.php" method="post">
     <?php
-    $material_query = "SELECT material FROM materials";
-    $material_query_run = mysql_query( $material_query );
+    $customerId_query = "SELECT customerId FROM customers";
+    $customerId_query_run = mysql_query( $customerId_query );
     echo "<select name='mySelect'>";
-    while   ( $material_query_array = mysql_fetch_array( $material_query_run ) ) {
-        echo "<option value='".$material_query_array['material']."' >".$material_query_array['material']."</option>";                        
+    while   ( $customerId_query_array = mysql_fetch_array( $customerId_query_run ) ) {
+        echo "<option value='".$customerId_query_array['customers']."' >".$customerId_query_array['customers']."</option>";                        
     }
     echo "</select>";
     ?>
