@@ -59,7 +59,7 @@
               if($check > 0) {
                   // Makes sure they are adding and not deducting
                   if($quantity > 0){
-                      $query = 'UPDATE purchases SET quantity = ' . $quantity . ' WHERE customerId = '. $customerId . ' AND productId = ' . $productId . 'AND quantity < ' . $quantity;
+                      $query = 'UPDATE purchases SET quantity = ' . $quantity . ' WHERE customerId = '. $customerId . ' AND productId = ' . $productId . 'AND quantity<' . $quantity;
                       if (!mysqli_query($connection, $query)) {
                           echo "<a class='waves-effect waves-light btn' href='index2.php'>Go Back</a><br>";
                           die("Error - You can only enter larger quantities.<br>" . mysqli_error($connection));
