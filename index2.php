@@ -73,18 +73,9 @@
       </div>
     </div>
 
-    <form action="getpurchasedata.php" method="post">
-        <?php
-          $query = "SELECT customerId FROM customers ORDER BY lastName";
-          $result = mysqli_query($connection,$query);
-          echo "<select name='mySelect'>";
-          while ($row = mysqli_fetch_assoc($result)) {
-              echo "<option value='".$row['customerId']."' >".$row['customerId']."</option>";                        
-          }
-          mysqli_free_result($result);
-          echo "</select>";
-        ?>
-    <input type="submit" name="submit"/>
+    <form action="page2.php" method="post">
+     <p>Name: <input type="text" name="name" /></p>
+     <p><input type="submit" /></p>
     </form>
 
   </body>
