@@ -62,7 +62,7 @@
                       if (!mysqli_query($connection, $query)) {
                           die("Error: Either the Customer ID or Product ID is incorrect.<br> " . mysqli_error($connection));
                       }
-                      echo "Your new purchase was successfuly added."
+                      echo "Your new purchase was successfuly added.";
                   }
                   else {
                     //  echo "Quantity should be positive!";
