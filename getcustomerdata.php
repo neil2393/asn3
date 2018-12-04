@@ -1,6 +1,6 @@
 <?php
 $query = "SELECT * FROM customers ORDER BY lastName";
-$result = mysqli_query($myConnection,$query);
+$result = mysqli_query($connection,$query);
 if (!$result) {
     die("databases query failed.");
 }
@@ -13,25 +13,4 @@ while ($row = mysqli_fetch_assoc($result)) {
 }
 mysqli_free_result($result);
 echo "</table>";
-
-/*
-    <form action="getpurchasedata.php" method="post">
-    <?php
-    $query = "SELECT customerId FROM customers ORDER BY lastName";
-    $result = mysqli_query($connection,$query);
-    if (!$result) {
-         die("databases query failed.");
-    }
-    echo "<select name='mySelect'>";
-    while   ( $query_array = mysql_fetch_array( $query_run ) ) {
-        echo "<option value='".$query_array['customerId']."' >".$query_array['customerId']."</option>";                        
-    }
-    echo "</select>";
-    mysqli_free_result($result);
-    mysqli_close($connection);
-    ?>
-    <input type="submit" name="submit"/>
-    </form>
-
-*/
 ?>
