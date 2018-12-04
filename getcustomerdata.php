@@ -12,7 +12,6 @@ while ($row = mysqli_fetch_assoc($result)) {
     echo "</tr>";
 }
 mysqli_free_result($result);
-mysqli_close($connection);
 echo "</table>";
 
 /*
