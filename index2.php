@@ -99,14 +99,14 @@
             <div class="card-content white-text">
               <span class="card-title">New Purchase</span>
               <p>Enter the following information to enter a new purchase:</p>
-              <form action="insert-purchase.php" method="post">
+              <form action="newpurchase.php" method="post">
                   <div class="input-field blue-grey darken-1">
-                  <input name="cusId" type="text" class="validate">
-                  <label for="cusId">Customer ID</label>
+                  <input name="customerId" type="text" class="validate">
+                  <label for="customerId">Customer ID</label>
                   </div>
                   <div class="input-field blue-grey darken-1">
-                  <input name="prodId" type="text" class="validate">
-                  <label for="prodId">Product ID</label>
+                  <input name="productId" type="text" class="validate">
+                  <label for="productId">Product ID</label>
                   </div>
                   <div class="input-field blue-grey darken-1">
                   <input name="quantity" type="text" class="validate">
