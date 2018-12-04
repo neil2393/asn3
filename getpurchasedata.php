@@ -26,12 +26,12 @@
               var link = $('a').attr('href');
               var equalPosition = link.indexOf('='); //Get the position of '='
               var number = link.substring(equalPosition + 1);
+              console.log(number, "Hello, world!");
             </script>
             <?php
               include 'connectdb.php';
 
               $value = $_POST["number"]
-              echo "$value"
 
               $query = "SELECT * FROM products WHERE productId IN (SELECT purchases.productId FROM purchases, customers WHERE purchases.customerId = customers.customerId AND ";
               $query .= "customers.customerId = " . $value . ")";
