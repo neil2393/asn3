@@ -63,6 +63,8 @@
         </div>
       </div>
     </div>
+
+    <a class="waves-effect waves-light btn" href="index2.php">Go Back</a>
   </body>
 </html>
  
