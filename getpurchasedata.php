@@ -16,6 +16,22 @@
   </head>
 
   <body>
+
+    <nav> <!-- navbar content here  --> </nav>
+
+    <ul id="slide-out" class="sidenav">
+      <li><div class="user-view">
+        <div class="background blue-grey">
+        </div>
+        <a href="#name"><span class="grey-text name">CS3319 Assignment 3 Neil Patel</span></a>
+      </div></li>
+      <li><a href="#!">Second Link</a></li>
+      <li><a href="#!">Second Link</a></li>
+      <li><a href="#!">Second Link</a></li>
+      <li><a href="#!">Second Link</a></li>
+    </ul>
+    <a href="#" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+
     <br>
     <h5>Customer Purchase Information:</h5>
     <div class="row">
