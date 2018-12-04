@@ -18,7 +18,7 @@
   <body>
 
     <nav>
-    <div class="nav-wrapper">
+    <div class="nav-wrapper blue-grey darken-1">
       <a href="#" class="brand-logo">CS3319 Assignment 3 Neil Patel</a>
       <ul id="nav-mobile" class="right hide-on-med-and-down">
     <!--
