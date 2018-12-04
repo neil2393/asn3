@@ -67,7 +67,7 @@
                   else {
                     //  echo "Quantity should be positive!";
                       echo "Error - You can only enter positive quantities.";
-                      echo "<a class="waves-effect waves-light btn" href="index2.php">Go Back</a>";
+                      echo "<a class='waves-effect waves-light btn' href='index2.php'>Go Back</a>";
                   }
               }
               // Otherwise, insert values into purchases
