@@ -12,38 +12,6 @@ while ($row = mysqli_fetch_assoc($result)) {
     echo "</tr>";
 }
 mysqli_free_result($result);
+mysqli_close($connection);
 echo "</table>";
-?>
-
-
-<?php
-/*
-$query = "SELECT * FROM pet";
-$result = mysqli_query($connection,$query);
-if (!$result) {
-     die("databases query failed.");
-}
-echo "<ol>";
-while ($row = mysqli_fetch_assoc($result)) {
-    echo "<li>";
-    echo $row["species"] . "</li>";
-}
-mysqli_free_result($result);
-echo "</ol>";
-?>
-
-<?php
-   $query = "SELECT * FROM owner";
-   $result = mysqli_query($connection,$query);
-   if (!$result) {
-        die("databases query failed.");
-    }
-   echo "Who are you looking up? </br>";
-   while ($row = mysqli_fetch_assoc($result)) {
-        echo '<input type="radio" name="petowners" value="';
-        echo $row["ownerid"];
-        echo '">' . $row["fname"] . " " . $row["lname"] . "<br>";
-   }
-   mysqli_free_result($result);
- */
 ?>

@@ -16,7 +16,6 @@
   </head>
 
   <body>
-
     <nav>
     <div class="nav-wrapper grey darken-3">
       <a href="#" class="brand-logo center">CS3319 Assignment 3 Neil Patel</a>
@@ -61,13 +60,13 @@
               <a class='dropdown-button btn' href='#' data-activates='dropdown1'>Customer ID</a>
               <!-- Dropdown Structure -->
               <ul id='dropdown1' class='dropdown-content'>
-                <li><a href="#!">31</a></li>
-                <li><a href="#!">12</a></li>
-                <li><a href="#!">15</a></li>
-                <li><a href="#!">14</a></li>
-                <li><a href="#!">10</a></li>
-                <li><a href="#!">21</a></li>
-                <li><a href="#!">13</a></li>
+                <li><a href="getpurchasedata.php?customerId=31">31</a></li>
+                <li><a href="getpurchasedata.php?customerId=12">12</a></li>
+                <li><a href="getpurchasedata.php?customerId=15">15</a></li>
+                <li><a href="getpurchasedata.php?customerId=14">14</a></li>
+                <li><a href="getpurchasedata.php?customerId=10">10</a></li>
+                <li><a href="getpurchasedata.php?customerId=21">21</a></li>
+                <li><a href="getpurchasedata.php?customerId=13">13</a></li>
               </ul>
           </div>
         </div>
@@ -84,10 +83,8 @@ ssh centos@vm144
 mysql -u root -p
 cd /var/www/html
 
-
 git add .
 git commit -m "push scripts files"
 git push origin master
 */
 ?>
-  </html>
