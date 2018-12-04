@@ -22,21 +22,15 @@
       <div class="col s12 m6">
         <div class="card blue-grey darken-1">
           <div class="card-content white-text">
-
-            <div id="divTest1"></div>
-            <script type="text/javascript">
-              var link = $('a').attr('href');
-              var equalPosition = link.indexOf('='); //Get the position of '='
-              var number = link.substring(equalPosition + 1);
-            $("#divTest1").text(number);
-            </script>
-
             <?php
+              session_start();
               include 'connectdb.php';
 
+              $selectedId = $_GET['customerId']; // Get 'Table'
+              $_SESSION['selectedId'] = $_GET['customerId'];
 
               $query = "SELECT * FROM products WHERE productId IN (SELECT purchases.productId FROM purchases, customers WHERE purchases.customerId = customers.customerId AND ";
-              $query .= "customers.customerId = " . "31" . ")";
+              $query .= "customers.customerId = " . $selectedId . ")";
               $result = mysqli_query($connection,$query);
               if (!$result) {
                   die("databases query failed.");
