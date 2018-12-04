@@ -75,13 +75,18 @@
 
     <form action="getpurchasedata.php" method="post">
     <?php
-    $customerId_query = "SELECT customerId FROM customers";
-    $customerId_query_run = mysql_query( $customerId_query );
+    $query = "SELECT customerId FROM customers ORDER BY lastName";
+    $result = mysqli_query($connection,$query);
+    if (!$result) {
+         die("databases query failed.");
+    }
     echo "<select name='mySelect'>";
-    while   ( $customerId_query_array = mysql_fetch_array( $customerId_query_run ) ) {
-        echo "<option value='".$customerId_query_array['customers']."' >".$customerId_query_array['customers']."</option>";                        
+    while   ( $query_array = mysql_fetch_array( $query_run ) ) {
+        echo "<option value='".$query_array['customerId']."' >".$query_array['customerId']."</option>";                        
     }
     echo "</select>";
+    mysqli_free_result($result);
+    mysqli_close($connection);
     ?>
     <input type="submit" name="submit"/>
     </form>
