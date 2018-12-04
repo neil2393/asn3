@@ -62,7 +62,7 @@
                       if (!mysqli_query($connection, $query)) {
                           die("Error:" . mysqli_error($connection));
                       }
-                      echo "Your new purchase was successfuly added."
+                      echo "Your new purchase was successfuly added.";
                   }
                   else {
                     //  echo "Quantity should be positive!";
