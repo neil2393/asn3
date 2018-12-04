@@ -19,14 +19,14 @@
 
     <nav>
     <div class="nav-wrapper grey darken-3">
-      <a href="#" class="brand-logo">CS3319 Assignment 3 Neil Patel</a>
-      <ul id="nav-mobile" class="right hide-on-med-and-down">
+      <a href="#" class="brand-logo center">CS3319 Assignment 3 Neil Patel</a>
     <!--
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
         <li><a href="sass.html">Sass</a></li>
         <li><a href="badges.html">Components</a></li>
         <li><a href="collapsible.html">JavaScript</a></li>
-    -->
       </ul>
+    -->
     </div>
     </nav>
 
