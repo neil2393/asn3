@@ -1,6 +1,6 @@
 <?php
 $query = "SELECT * FROM customers ORDER BY lastName";
-$result = mysqli_query($connection,$query);
+$result = mysqli_query($myConnection,$query);
 if (!$result) {
     die("databases query failed.");
 }
