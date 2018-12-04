@@ -17,6 +17,7 @@
   </head>
 
   <body>
+
     <br>
     <h5>Customer Purchase Information:</h5>
     <div class="row">
@@ -24,8 +25,13 @@
         <div class="card blue-grey darken-1">
           <div class="card-content white-text">
             <?php
+
+              var link = $('a').attr('href');
+              var equalPosition = link.indexOf('='); //Get the position of '='
+              var number = link.substring(equalPosition + 1);
+
               $query = "SELECT * FROM products WHERE product_id IN (SELECT purchases.productId FROM purchases, customers WHERE purchases.customerId = customers.customerId AND ";
-              $query .= "customers.customerId = " . $_GET['customerId'] . ")";
+              $query .= "customers.customerId = " . number . ")";
               $result = mysqli_query($connection, $query);
               if (!$result) {
                   die("databases query failed.");

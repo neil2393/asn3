@@ -56,26 +56,9 @@
             <p>Choose a customer ID to see all of their purchases</p>
           </div>
           <div class="card-action">
-              <form action="getpurchasedata.php" method="post">
-                <select name="customerId">
-                  <option value="31">31</option>
-                  <option value="12">12</option>
-                  <option value="15">15</option>
-                  <option value="14">14</option>
-                  <option value="10">10</option>
-                  <option value="21">21</option>
-                  <option value="13">13</option>
-                </select>
-              </form>
-              <input type="submit">
-          </div>
-        </div>
-      </div>
-    </div>
-
-<!--
+              <!-- Dropdown Trigger -->
               <a class='dropdown-button btn' href='#' data-activates='dropdown1'>Customer ID</a>
-
+              <!-- Dropdown Structure -->
               <ul id='dropdown1' class='dropdown-content'>
                 <li><a href="getpurchasedata.php?customerId=31">31</a></li>
                 <li><a href="getpurchasedata.php?customerId=12">12</a></li>
@@ -85,7 +68,11 @@
                 <li><a href="getpurchasedata.php?customerId=21">21</a></li>
                 <li><a href="getpurchasedata.php?customerId=13">13</a></li>
               </ul>
--->
+          </div>
+        </div>
+      </div>
+    </div>
+
   </body>
 </html>
 
