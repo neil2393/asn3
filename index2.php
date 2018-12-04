@@ -19,7 +19,7 @@
 
     <nav>
     <div class="nav-wrapper">
-      <a href="#" class="brand-logo">CS3319 Assignment Neil Patel</a>
+      <a href="#" class="brand-logo">CS3319 Assignment 3 Neil Patel</a>
       <ul id="nav-mobile" class="right hide-on-med-and-down">
     <!--
         <li><a href="sass.html">Sass</a></li>
@@ -34,11 +34,18 @@
     include 'connectdb.php';
     ?> 
 
-    <h5>Customer Information:</h5>
-
-    <?php
-    include 'getcustomerdata.php';
-    ?>
+    <div class="row">
+      <div class="col s12 m6">
+        <div class="card blue-grey darken-1">
+          <div class="card-content white-text">
+            <span class="card-title">Customer Information</span>
+            <?php
+            include 'getcustomerdata.php';
+            ?>
+          </div>
+        </div>
+      </div>
+    </div>
 
     <h5>Products that a customer has purchased:</h5>
 
