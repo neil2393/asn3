@@ -42,17 +42,17 @@
               $selected_category = $_GET['category'];
               $_SESSION['selected_category'] = $_GET['category'];
 
-              $query = "SELECT * FROM purchases WHERE productId IN (SELECT purchases.productId FROM purchases, customers WHERE purchases.customerId = customers.customerId AND ";
+              $query = "SELECT * FROM purchases, products WHERE productId IN (SELECT purchases.productId FROM purchases, customers WHERE purchases.customerId = customers.customerId AND ";
               $query .= "customers.customerId = " . $selected_category . ")";
               $result = mysqli_query($connection,$query);
               if (!$result) {
                   die("databases query failed.");
               }
               echo "<table>";
-              echo "<tr><th>Product ID</th><th>Product Description</th><th>Quantity</th>";
+              echo "<tr><th>Product ID</th><th>Product Description</th><th>Cost per Item</th><th>Quantity</th>";
               while ($row = mysqli_fetch_assoc($result)) {
                   echo "<tr>";
-                  echo "<td>" . $row["productId"] . "</td><td>" . $row["productDescription"] . "</td><td>" . $row["quantity"] . "</td>";
+                  echo "<td>" . $row["productId"] . "</td><td>" . $row["productDescription"] . "</td><td>" . $row["costPerItem"] . "</td><td>" . $row["quantity"] . "</td>";
                   echo "</tr>";
               }
               mysqli_free_result($result);
