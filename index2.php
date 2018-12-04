@@ -18,7 +18,7 @@
   <body>
 
     <nav>
-    <div class="nav-wrapper blue-grey darken-1">
+    <div class="nav-wrapper grey darken-3">
       <a href="#" class="brand-logo">CS3319 Assignment 3 Neil Patel</a>
       <ul id="nav-mobile" class="right hide-on-med-and-down">
     <!--
@@ -38,7 +38,7 @@
     <h5>Customer Information:</h5>
     <div class="row">
       <div class="col s12 m6">
-        <div class="card grey darken-1">
+        <div class="card blue-grey darken-1">
           <div class="card-content white-text">
             <?php
             include 'getcustomerdata.php';
