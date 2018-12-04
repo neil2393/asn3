@@ -25,22 +25,19 @@
         <div class="card blue-grey darken-1">
           <div class="card-content white-text">
             <?php
-
-              $query = "SELECT * FROM products WHERE product_id IN (SELECT purchases.productId FROM purchases, customers WHERE purchases.customerId = customers.customerId AND ";
-              $query .= "customers.customerId = " . "31" . ")";
-              $result = mysqli_query($connection, $query);
+              $query = "SELECT * FROM customers ORDER BY lastName";
+              $result = mysqli_query($connection,$query);
               if (!$result) {
-                  die("databases query failed.");
+                   die("databases query failed.");
               }
               echo "<table>";
-              echo "<tr><th>Product ID</th><th>Product Description</th><th>Cost per Item</th><th>Items on Hand</th>";
+              echo "<tr><th>Customer ID</th><th>First Name</th><th>Last Name</th><th>City</th><th>Phone Number</th><th>Agent ID</th></tr>";
               while ($row = mysqli_fetch_assoc($result)) {
                   echo "<tr>";
-                  echo "<td>" . $row["productId"] . "</td><td>" . $row["productDescription"] . "</td><td>" . $row["costPerItem"] . "</td><td>" . $row["itemsOnHand"] . "</td>";
+                  echo "<td>" . $row["customerId"] . "</td><td>" . $row["firstName"] . "</td><td>" . $row["lastName"] . "</td><td>" . $row["city"] . "</td><td>" . $row["phoneNumber"] . "</td><td>" . $row["agentId"] . "</td>";
                   echo "</tr>";
               }
               mysqli_free_result($result);
-              mysqli_close($connection);
               echo "</table>";
             ?>
           </div>
