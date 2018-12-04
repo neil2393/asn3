@@ -46,7 +46,6 @@
               $query = 'SELECT * FROM purchases WHERE customerId = '. $customerId . ' AND productId = ' . $productId;
               $result = mysqli_query($connection, $query);
               if (!$result) {
-                  echo "<a class="waves-effect waves-light btn" href="index2.php">Go Back</a>";
                   die("Error<br>" . mysqli_error($connection));
               }
               while ($row = mysqli_fetch_assoc($result)) {
@@ -61,7 +60,6 @@
                   if($quantity > 0){
                       $query = 'UPDATE purchases SET quantity = ' . $quantity . ' WHERE customerId = '. $customerId . ' AND productId = ' . $productId . 'AND quantity < ' . $quantity;
                       if (!mysqli_query($connection, $query)) {
-                          echo "<a class="waves-effect waves-light btn" href="index2.php">Go Back</a>";
                           die("Error - You can only enter larger quantities.<br>" . mysqli_error($connection));
                       }
                       echo "Your new purchase was successfuly updated.";
@@ -76,7 +74,6 @@
               else {
                   $query = 'INSERT INTO purchases(customerId, productId, quantity) VALUES(' . $customerId . ',' . $productId . ',"' . $quantity . '")';
                   if (!mysqli_query($connection, $query)) {
-                      echo "<a class="waves-effect waves-light btn" href="index2.php">Go Back</a>";
                       die("Error - Either the Customer ID or Product ID is incorrect.<br>" . mysqli_error($connection));
                   }
                   echo "Your new purchase was successfuly added.";
