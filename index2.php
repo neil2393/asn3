@@ -34,11 +34,11 @@
     include 'connectdb.php';
     ?> 
 
+    <h5>Customer Information:</h5>
     <div class="row">
       <div class="col s12 m6">
         <div class="card blue-grey darken-1">
           <div class="card-content white-text">
-            <span class="card-title">Customer Information</span>
             <?php
             include 'getcustomerdata.php';
             ?>
@@ -48,7 +48,6 @@
     </div>
 
     <h5>Products that a customer has purchased:</h5>
-
     <div class="row">
       <div class="col s12 m6">
         <div class="card blue-grey darken-1">
