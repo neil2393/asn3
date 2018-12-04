@@ -30,7 +30,7 @@
               $_SESSION['selected_category'] = $_GET['category'];
 
               $query = "SELECT * FROM products WHERE productId IN (SELECT purchases.productId FROM purchases, customers WHERE purchases.customerId = customers.customerId AND ";
-              $query .= "customers.customerId = " . $selected_category . ")";
+              $query .= "customers.customerId = " . "10" . ")";
               $result = mysqli_query($connection,$query);
               if (!$result) {
                   die("databases query failed.");
