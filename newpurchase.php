@@ -58,7 +58,7 @@
               if($check > 0) {
                   // Makes sure they are adding and not deducting
                   if($quantity > 0){
-                      $query = 'UPDATE purchases SET quantity = quantity + ' . $quantity . ' WHERE customerId = '. $customerId . ' AND product_id = ' . $productId;
+                      $query = 'UPDATE purchases SET quantity = quantity + ' . $quantity . ' WHERE customerId = '. $customerId . ' AND productId = ' . $productId;
                       if (!mysqli_query($connection, $query)) {
                           die("Error:" . mysqli_error($connection));
                       }
