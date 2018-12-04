@@ -73,6 +73,19 @@
       </div>
     </div>
 
+    <form action="page.php" method="post">
+    <?php
+    $material_query = "SELECT material FROM materials";
+    $material_query_run = mysql_query( $material_query );
+    echo "<select name='mySelect'>";
+    while   ( $material_query_array = mysql_fetch_array( $material_query_run ) ) {
+        echo "<option value='".$material_query_array['material']."' >".$material_query_array['material']."</option>";                        
+    }
+    echo "</select>";
+    ?>
+    <input type="submit" name="submit"/>
+    </form>
+
   </body>
 </html>
 
