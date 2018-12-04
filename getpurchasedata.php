@@ -31,7 +31,7 @@
               var number = link.substring(equalPosition + 1);"
 
               $query = "SELECT * FROM products WHERE product_id IN (SELECT purchases.productId FROM purchases, customers WHERE purchases.customerId = customers.customerId AND ";
-              $query .= "customers.customerId = " . echo "number" . ")";
+              $query .= "customers.customerId = " . "number" . ")";
               $result = mysqli_query($connection, $query);
               if (!$result) {
                   die("databases query failed.");
