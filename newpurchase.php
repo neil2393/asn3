@@ -35,6 +35,7 @@
         <div class="card blue-grey darken-1">
           <div class="card-content white-text">
             <?php
+              session_start();
               include 'connectdb.php';
 
               $customerId = (int)$_POST["customerId"];
@@ -87,6 +88,7 @@
       </div>
     </div>
 
+
     <?php
       echo "<blockquote><h5>Updated Customer " . $customerId . " Purchase Information:</h5></blockquote>"
     ?>
@@ -95,6 +97,8 @@
         <div class="card blue-grey darken-1">
           <div class="card-content white-text">
             <?php
+              session_start();
+              include 'connectdb.php';
 
               $customerId = (int)$_POST["customerId"];
               $productId = (int)$_POST["productId"];
