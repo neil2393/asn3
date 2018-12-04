@@ -100,21 +100,17 @@
               <span class="card-title">New Purchase</span>
               <p>Enter the following information to enter a new purchase:</p>
               <form action="insert-purchase.php" method="post">
-                  <div class="input-field blue-grey darken-1">
+                  <div class="input-field col s6 blue-grey darken-1">
                   <input name="cusId" type="text" class="validate">
                   <label for="cusId">Customer ID</label>
                   </div>
-                  <div class="input-field blue-grey darken-1">
+                  <div class="input-field col s6 blue-grey darken-1">
                   <input name="prodId" type="text" class="validate">
                   <label for="prodId">Product ID</label>
                   </div>
                   <div class="input-field blue-grey darken-1">
                   <input name="quantity" type="text" class="validate">
                   <label for="quantity">Quantity</label>
-                  </div>
-                  <div class="input-field blue-grey darken-1">
-                  <input name="blank" type="text" class="validate">
-                  <label for="blank"></label>
                   </div>
               <button class="btn waves-effect waves-light" type="submit" name="action">Submit
                 <i class="material-icons right">send</i>
