@@ -82,10 +82,10 @@
               <p>Sort product information in the following orders:</p>
             </div>
             <div class="card-action">
-              <a class="waves-effect waves-light btn" href="index2.php">Ascending Description</a>
-              <a class="waves-effect waves-light btn" href="index2.php">Descending Description</a>
-              <a class="waves-effect waves-light btn" href="index2.php">Ascending Price</a>
-              <a class="waves-effect waves-light btn" href="index2.php">Descending Price</a>
+              <a class="waves-effect waves-light btn" href="getproductdata.php?category=ascDesc">Ascending Description</a>
+              <a class="waves-effect waves-light btn" href="getproductdata.php?category=descDesc">Descending Description</a>
+              <a class="waves-effect waves-light btn" href="getproductdata.php?category=ascPrice">Ascending Price</a>
+              <a class="waves-effect waves-light btn" href="getproductdata.php?category=descPrice">Descending Price</a>
             </div>
           </div>
         </div>
