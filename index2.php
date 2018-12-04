@@ -33,54 +33,47 @@
     include 'connectdb.php';
     ?> 
 
-    <div class="card">
-      <div class="card-content">
-        <br>
-        <h5>Customer Information:</h5>
-        <div class="row">
-          <div class="col s12 m6">
-            <div class="card blue-grey darken-1">
-              <div class="card-content white-text">
-                <?php
-                include 'getcustomerdata.php';
-                ?>
-              </div>
+      <br>
+      <blockquote><h5>Customer Information:</h5></blockquote>
+      <div class="row">
+        <div class="col s12 m6">
+          <div class="card blue-grey darken-1">
+            <div class="card-content white-text">
+              <?php
+              include 'getcustomerdata.php';
+              ?>
             </div>
           </div>
         </div>
       </div>
-    </div>
 
-    <div class="card">
-      <div class="card-content">
-        <br>
-        <h5>Products that a customer has purchased:</h5>
-        <div class="row">
-          <div class="col s12 m6">
-            <div class="card blue-grey darken-1">
-              <div class="card-content white-text">
-                <span class="card-title">Customer Purchase Information</span>
-                <p>Choose a customer ID to see all of their purchases</p>
-              </div>
-              <div class="card-action">
-                  <!-- Dropdown Trigger -->
-                  <a class='dropdown-button btn' href='' data-activates='dropdown1'>Customer ID</a>
-                  <!-- Dropdown Structure -->
-                  <ul id='dropdown1' class='dropdown-content'>
-                    <li><a href="getpurchasedata.php?category=31">31</a></li>
-                    <li><a href="getpurchasedata.php?category=12">12</a></li>
-                    <li><a href="getpurchasedata.php?category=15">15</a></li>
-                    <li><a href="getpurchasedata.php?category=14">14</a></li>
-                    <li><a href="getpurchasedata.php?category=10">10</a></li>
-                    <li><a href="getpurchasedata.php?category=21">21</a></li>
-                    <li><a href="getpurchasedata.php?category=13">13</a></li>
-                  </ul>
-              </div>
+
+      <br>
+      <blockquote><h5>Products that a customer has purchased:</h5></blockquote>
+      <div class="row">
+        <div class="col s12 m6">
+          <div class="card blue-grey darken-1">
+            <div class="card-content white-text">
+              <span class="card-title">Customer Purchase Information</span>
+              <p>Choose a customer ID to see all of their purchases</p>
+            </div>
+            <div class="card-action">
+                <!-- Dropdown Trigger -->
+                <a class='dropdown-button btn' href='' data-activates='dropdown1'>Customer ID</a>
+                <!-- Dropdown Structure -->
+                <ul id='dropdown1' class='dropdown-content'>
+                  <li><a href="getpurchasedata.php?category=31">31</a></li>
+                  <li><a href="getpurchasedata.php?category=12">12</a></li>
+                  <li><a href="getpurchasedata.php?category=15">15</a></li>
+                  <li><a href="getpurchasedata.php?category=14">14</a></li>
+                  <li><a href="getpurchasedata.php?category=10">10</a></li>
+                  <li><a href="getpurchasedata.php?category=21">21</a></li>
+                  <li><a href="getpurchasedata.php?category=13">13</a></li>
+                </ul>
             </div>
           </div>
         </div>
       </div>
-    </div>
 
     <?php
       mysqli_close($connection);
