@@ -26,12 +26,12 @@
           <div class="card-content white-text">
             <?php
 
-              var link = $('a').attr('href');
+              echo "var link = $('a').attr('href');
               var equalPosition = link.indexOf('='); //Get the position of '='
-              var number = link.substring(equalPosition + 1);
+              var number = link.substring(equalPosition + 1);"
 
               $query = "SELECT * FROM products WHERE product_id IN (SELECT purchases.productId FROM purchases, customers WHERE purchases.customerId = customers.customerId AND ";
-              $query .= "customers.customerId = " . number . ")";
+              $query .= "customers.customerId = " . echo "number" . ")";
               $result = mysqli_query($connection, $query);
               if (!$result) {
                   die("databases query failed.");
