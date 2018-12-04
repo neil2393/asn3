@@ -60,7 +60,7 @@
                   if($quantity > 0){
                       $query = 'UPDATE purchases SET quantity = ' . $quantity . ' WHERE customerId = '. $customerId . ' AND productId = ' . $productId . 'AND quantity < ' . $quantity;
                       if (!mysqli_query($connection, $query)) {
-                          die("Error - You can only enter larger quantities." . mysqli_error($connection));
+                          die("Error - You can only enter larger quantities.<br>" . mysqli_error($connection));
                       }
                       echo "Your new purchase was successfuly updated.";
                   }
