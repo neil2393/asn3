@@ -46,7 +46,7 @@
               $query = 'SELECT * FROM purchases WHERE customerId = '. $customerId . ' AND productId = ' . $productId;
               $result = mysqli_query($connection, $query);
               if (!$result) {
-                  die("Either the Customer ID or Product ID is incorrect.");
+                  die("Error<br>" . mysqli_error($connection));
               }
               while ($row = mysqli_fetch_assoc($result)) {
                   // If purchase exists, value of $purchase_exists will be > 0
@@ -58,22 +58,22 @@
               if($check > 0) {
                   // Makes sure they are adding and not deducting
                   if($quantity > 0){
-                      $query = 'UPDATE purchases SET quantity = quantity + ' . $quantity . ' WHERE customerId = '. $customerId . ' AND productId = ' . $productId;
+                      $query = 'UPDATE purchases SET quantity = ' . $quantity . ' WHERE customerId = '. $customerId . ' AND productId = ' . $productId . 'AND quantity < ' . $quantity;
                       if (!mysqli_query($connection, $query)) {
-                          die("Error:" . mysqli_error($connection));
+                          die("Error - You can only enter larger quantities." . mysqli_error($connection));
                       }
-                      echo "Your new purchase was successfuly added.";
+                      echo "Your new purchase was successfuly updated.";
                   }
                   else {
                     //  echo "Quantity should be positive!";
-                      echo "Error";
+                      echo "Error - You can only enter positive quantities.";
                   }
               }
               // Otherwise, insert values into purchases
               else {
                   $query = 'INSERT INTO purchases(customerId, productId, quantity) VALUES(' . $customerId . ',' . $productId . ',"' . $quantity . '")';
                   if (!mysqli_query($connection, $query)) {
-                      die("Error: Either the Customer ID or Product ID is incorrect.<br>" . mysqli_error($connection));
+                      die("Error - Either the Customer ID or Product ID is incorrect.<br>" . mysqli_error($connection));
                   }
                   echo "Your new purchase was successfuly added.";
               }
