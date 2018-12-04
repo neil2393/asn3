@@ -26,11 +26,11 @@
               session_start();
               include 'connectdb.php';
 
-              $selectedId = $_GET['customerId']; // Get 'Table'
-              $_SESSION['selectedId'] = $_GET['customerId'];
+              $selected_category = $_GET['category']; // Get 'Table'
+              $_SESSION['selected_category'] = $_GET['category'];
 
               $query = "SELECT * FROM products WHERE productId IN (SELECT purchases.productId FROM purchases, customers WHERE purchases.customerId = customers.customerId AND ";
-              $query .= "customers.customerId = " . $selectedId . ")";
+              $query .= "customers.customerId = " . $selected_category . ")";
               $result = mysqli_query($connection,$query);
               if (!$result) {
                   die("databases query failed.");

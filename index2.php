@@ -60,13 +60,13 @@
               <a class='dropdown-button btn' href='' data-activates='dropdown1'>Customer ID</a>
               <!-- Dropdown Structure -->
               <ul id='dropdown1' class='dropdown-content'>
-                <li><a href="getpurchasedata.php?customerId=31">31</a></li>
-                <li><a href="getpurchasedata.php?customerId=12">12</a></li>
-                <li><a href="getpurchasedata.php?customerId=15">15</a></li>
-                <li><a href="getpurchasedata.php?customerId=14">14</a></li>
-                <li><a href="getpurchasedata.php?customerId=10">10</a></li>
-                <li><a href="getpurchasedata.php?customerId=21">21</a></li>
-                <li><a href="getpurchasedata.php?customerId=13">13</a></li>
+                <li><a href="getpurchasedata.php?category=31">31</a></li>
+                <li><a href="getpurchasedata.php?category=12">12</a></li>
+                <li><a href="getpurchasedata.php?category=15">15</a></li>
+                <li><a href="getpurchasedata.php?category=14">14</a></li>
+                <li><a href="getpurchasedata.php?category=10">10</a></li>
+                <li><a href="getpurchasedata.php?category=21">21</a></li>
+                <li><a href="getpurchasedata.php?category=13">13</a></li>
               </ul>
           </div>
         </div>
