@@ -32,19 +32,21 @@
     <?php
       session_start();
       include 'connectdb.php';
-      
-      $selected_category = $_GET['category'];
-      $_SESSION['selected_category'] = $_GET['category'];
+
+      $customerId = $_GET['category'];
+      $_SESSION['customerId'] = $_GET['category'];
     ?>
 
     <br>
-    <blockquote><h5>Customer Purchase Information:</h5></blockquote>
+    <?php
+      echo "<blockquote><h5>Customer " . $customerId . "Purchase Information:</h5></blockquote>"
+    ?>
     <div class="row">
       <div class="col s12 m6">
         <div class="card blue-grey darken-1">
           <div class="card-content white-text">
             <?php
-              $query = "SELECT * FROM products, purchases, customers WHERE products.productId = purchases.productId AND purchases.customerId = customers.customerId AND customers.customerId = " . $selected_category;
+              $query = "SELECT * FROM products, purchases, customers WHERE products.productId = purchases.productId AND purchases.customerId = customers.customerId AND customers.customerId = " . $customerId;
               //$query .= "customers.customerId = " . $selected_category . "))";
               $result = mysqli_query($connection,$query);
               if (!$result) {
