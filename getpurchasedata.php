@@ -31,7 +31,7 @@
               include 'connectdb.php';
 
               $query = "SELECT * FROM products WHERE productId IN (SELECT purchases.productId FROM purchases, customers WHERE purchases.customerId = customers.customerId AND ";
-              $query .= "customers.customerId = " . echo "number" . ")";
+              $query .= "customers.customerId = " . $value = $_POST["number"] . ")";
               $result = mysqli_query($connection,$query);
               if (!$result) {
                   die("databases query failed.");
