@@ -50,6 +50,7 @@
               //$query .= "customers.customerId = " . $selected_category . "))";
               $result = mysqli_query($connection,$query);
               if (!$result) {
+                  echo "<a class='waves-effect waves-light btn' href='index2.php'>Go Back</a><br>";
                   die("databases query failed.");
               }
               echo "<table>";
