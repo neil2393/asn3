@@ -42,8 +42,8 @@
               $selected_category = $_GET['category'];
               $_SESSION['selected_category'] = $_GET['category'];
 
-              $query = "SELECT * FROM purchases WHERE productId IN (SELECT purchases.productId FROM purchases, customers WHERE purchases.customerId = customers.customerId AND ";
-              $query .= "customers.customerId = " . $selected_category . ")";
+              $query = "SELECT * FROM purchases, products WHERE purchases.customerId = products.customerId";
+              //$query .= "customers.customerId = " . $selected_category . ")";
               $result = mysqli_query($connection,$query);
               if (!$result) {
                   die("databases query failed.");
