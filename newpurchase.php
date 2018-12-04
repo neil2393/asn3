@@ -60,9 +60,9 @@
                   if($quantity > 0){
                       $query = 'UPDATE purchases SET quantity = quantity + ' . $quantity . ' WHERE customerId = '. $customerId . ' AND product_id = ' . $productId;
                       if (!mysqli_query($connection, $query)) {
-                          die("Error: Either the Customer ID or Product ID is incorrect.<br> " . mysqli_error($connection));
+                          die("Error:" . mysqli_error($connection));
                       }
-                      echo "Your new purchase was successfuly added.";
+                      echo "Your new purchase was successfuly added."
                   }
                   else {
                     //  echo "Quantity should be positive!";
@@ -73,7 +73,7 @@
               else {
                   $query = 'INSERT INTO purchases(customerId, productId, quantity) VALUES(' . $customerId . ',' . $productId . ',"' . $quantity . '")';
                   if (!mysqli_query($connection, $query)) {
-                      die("Error - insert failed: " . mysqli_error($connection));
+                      die("Error: Either the Customer ID or Product ID is incorrect.<br>" . mysqli_error($connection));
                   }
                   echo "Your new purchase was successfuly added.";
               }
