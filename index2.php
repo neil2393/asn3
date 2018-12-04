@@ -73,6 +73,24 @@
         </div>
       </div>
 
+      <blockquote><h5>Product Information:</h5></blockquote>
+      <div class="row">
+        <div class="col s12 m6">
+          <div class="card blue-grey darken-1">
+            <div class="card-content white-text">
+              <span class="card-title">Product List</span>
+              <p>Sort product information in the following orders:</p>
+            </div>
+            <div class="card-action">
+              <a class="waves-effect waves-light btn" href="index2.php">Ascending Description</a>
+              <a class="waves-effect waves-light btn" href="index2.php">Descending Description</a>
+              <a class="waves-effect waves-light btn" href="index2.php">Ascending Price</a>
+              <a class="waves-effect waves-light btn" href="index2.php">Descending Price</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
     <?php
       mysqli_close($connection);
     ?>
