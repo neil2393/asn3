@@ -29,19 +29,21 @@
     </div>
     </nav>
 
+    <?php
+      session_start();
+      include 'connectdb.php';
+
+      $customerId = (int)$_POST["customerId"];
+      $productId = (int)$_POST["productId"];
+      $quantity = (int)$_POST["quantity"];
+    ?>
+
     <br>
     <div class="row">
       <div class="col s12 m6">
         <div class="card blue-grey darken-1">
           <div class="card-content white-text">
             <?php
-              session_start();
-              include 'connectdb.php';
-
-              $customerId = (int)$_POST["customerId"];
-              $productId = (int)$_POST["productId"];
-              $quantity = (int)$_POST["quantity"];
-
               $check = 0;
               $query = 'SELECT * FROM purchases WHERE customerId = '. $customerId . ' AND productId = ' . $productId;
               $result = mysqli_query($connection, $query);
@@ -62,7 +64,7 @@
                       $query = 'UPDATE purchases SET quantity = quantity + ' . $quantity . ' WHERE customerId = '. $customerId . ' AND productId = ' . $productId;
                       if (!mysqli_query($connection, $query)) {
                           echo "<a class='waves-effect waves-light btn' href='index2.php'>Go Back</a><br>";
-                          die("Error - You can only enter larger quantities.<br>" . mysqli_error($connection));
+                          die("Error.<br>" . mysqli_error($connection));
                       }
                       echo "Your new purchase was successfuly updated.";
                   }
@@ -88,19 +90,14 @@
       </div>
     </div>
 
-    <blockquote><h5>Updated Customer Purchase Information:</h5></blockquote>
+    <?php
+      echo "<blockquote><h5>Updated Customer " . $customerId . " Purchase Information:</h5></blockquote>"
+    ?>
     <div class="row">
       <div class="col s12 m6">
         <div class="card blue-grey darken-1">
           <div class="card-content white-text">
             <?php
-              session_start();
-              include 'connectdb.php';
-
-              $customerId = (int)$_POST["customerId"];
-              $productId = (int)$_POST["productId"];
-              $quantity = (int)$_POST["quantity"];
-
               $query = "SELECT * FROM products, purchases, customers WHERE products.productId = purchases.productId AND purchases.customerId = customers.customerId AND customers.customerId = " . $customerId;
               //$query .= "customers.customerId = " . $customerId . ")";
               $result = mysqli_query($connection,$query);
