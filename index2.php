@@ -13,6 +13,7 @@
       $('.dropdown-trigger').dropdown();
     </script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   </head>
 
   <body>
@@ -97,16 +98,24 @@
           <div class="card blue-grey darken-1">
             <div class="card-content white-text">
               <span class="card-title">New Purchase</span>
-              <p>Sort product information in the following orders:</p>
-                <div class="input-field col s6 blue-grey darken-1">
-                <input id="last_name" type="text" class="validate">
-                <label for="last_name">Last Name</label>
-                </div>
-                <div class="input-field col s6 blue-grey darken-1">
-                <input id="last_name" type="text" class="validate">
-                <label for="last_name">Last Name</label>
-                </div>
-              <p>Sort</p>
+              <p>Enter the following information to enter a new purchase:</p>
+              <form action="insert-purchase.php" method="post">
+                  <div class="input-field col s6 blue-grey darken-1">
+                  <input name="cusId" type="text" class="validate">
+                  <label for="cusId">Customer ID</label>
+                  </div>
+                  <div class="input-field col s6 blue-grey darken-1">
+                  <input name="prodId" type="text" class="validate">
+                  <label for="prodId">Product ID</label>
+                  </div>
+                  <div class="input-field col s6 blue-grey darken-1">
+                  <input name="quantity" type="text" class="validate">
+                  <label for="quantity">Quantity</label>
+                  </div>
+              <button class="btn waves-effect waves-light" type="submit" name="action">Submit
+                <i class="material-icons right">send</i>
+              </button>
+              </form>
             </div>
           </div>
         </div>
