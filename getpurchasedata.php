@@ -33,7 +33,7 @@
 
 
               $query = "SELECT * FROM products WHERE productId IN (SELECT purchases.productId FROM purchases, customers WHERE purchases.customerId = customers.customerId AND ";
-              $query .= "customers.customerId = " . "100" . ")";
+              $query .= "customers.customerId = " . "31" . ")";
               $result = mysqli_query($connection,$query);
               if (!$result) {
                   die("databases query failed.");
