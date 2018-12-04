@@ -98,14 +98,14 @@
               $productId = (int)$_POST["productId"];
               $quantity = (int)$_POST["quantity"];
 
-              $query = "SELECT * FROM products WHERE productId IN (SELECT purchases.productId FROM purchases, customers WHERE purchases.customerId = customers.customerId AND ";
-              $query .= "customers.customerId = " . $customerId . ")";
+              $query = "SELECT * FROM products, purchases, customers WHERE products.productId = purchases.productId AND purchases.customerId = customers.customerId AND customers.customerId = " . $customerId;
+              //$query .= "customers.customerId = " . $customerId . ")";
               $result = mysqli_query($connection,$query);
               if (!$result) {
                   die("databases query failed.");
               }
               echo "<table>";
-              echo "<tr><th>Product ID</th><th>Product Description</th><th>Cost per Item</th><th>quantity</th>";
+              echo "<tr><th>Product ID</th><th>Product Description</th><th>Cost per Item</th><th>Quantity</th>";
               while ($row = mysqli_fetch_assoc($result)) {
                   echo "<tr>";
                   echo "<td>" . $row["productId"] . "</td><td>" . $row["productDescription"] . "</td><td>" . $row["costPerItem"] . "</td><td>" . $row["quantity"] . "</td>";
