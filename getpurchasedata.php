@@ -22,23 +22,29 @@
       <div class="col s12 m6">
         <div class="card blue-grey darken-1">
           <div class="card-content white-text">
+            <script>
+              var link = $('a').attr('href');
+              var equalPosition = link.indexOf('='); //Get the position of '='
+              var number = link.substring(equalPosition + 1);
+            </script>
             <?php
-            include 'connectdb.php';
+              include 'connectdb.php';
 
-            $query = "SELECT * FROM customers ORDER BY lastName";
-            $result = mysqli_query($connection,$query);
-            if (!$result) {
-                die("databases query failed.");
-            }
-            echo "<table>";
-            echo "<tr><th>Customer ID</th><th>First Name</th><th>Last Name</th><th>City</th><th>Phone Number</th><th>Agent ID</th></tr>";
-            while ($row = mysqli_fetch_assoc($result)) {
-                echo "<tr>";
-                echo "<td>" . $row["customerId"] . "</td><td>" . $row["firstName"] . "</td><td>" . $row["lastName"] . "</td><td>" . $row["city"] . "</td><td>" . $row["phoneNumber"] . "</td><td>" . $row["agentId"] . "</td>";
-                echo "</tr>";
-            }
-            mysqli_free_result($result);
-            echo "</table>";
+              $query = "SELECT * FROM products WHERE productId IN (SELECT purchases.productId FROM purchases, customers WHERE purchases.customerId = customers.customerId AND ";
+              $query .= "customers.customerId = " . echo "number" . ")";
+              $result = mysqli_query($connection,$query);
+              if (!$result) {
+                  die("databases query failed.");
+              }
+              echo "<table>";
+              echo "<tr><th>Product ID</th><th>Product Description</th><th>Cost per Item</th><th>Items on Hand</th>";
+              while ($row = mysqli_fetch_assoc($result)) {
+                  echo "<tr>";
+                  echo "<td>" . $row["productId"] . "</td><td>" . $row["productDescription"] . "</td><td>" . $row["costPerItem"] . "</td><td>" . $row["itemsOnHand"] . "</td>";
+                  echo "</tr>";
+              }
+              mysqli_free_result($result);
+              echo "</table>";
             ?>
           </div>
         </div>
