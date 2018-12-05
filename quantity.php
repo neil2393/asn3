@@ -39,17 +39,17 @@
               include 'connectdb.php';
 
               $quantity = $_POST["quantity"];
-              $query = 'SELECT * FROM customers, purchases, products WHERE customers.customerId = purchases.customerId AND purchases.quantity > ' . $quantity;
+              $query = 'SELECT * FROM customers, purchases, products WHERE products.productId = purchases.productId AND customers.customerId = purchases.customerId AND purchases.quantity > ' . $quantity;
               $result = mysqli_query($connection, $query);
               if (!$result) {
                   echo "<a class='waves-effect waves-light btn' href='index2.php'>Go Back</a><br>";
                   die("database query failed.");
               }
               echo "<table>";
-              echo "<tr><th>Customer ID</th><th>First Name</th><th>Last Name</th><th>City</th><th>Phone Number</th><th>Agent ID</th><th>Quantity</th></tr>";
+              echo "<tr><th>Customer ID</th><th>Product ID</th><th>Product Description</th><th>Quantity</th></tr>";
               while ($row = mysqli_fetch_assoc($result)) {
                   echo "<tr>";
-                  echo "<td>" . $row["customerId"] . "</td><td>" . $row["firstName"] . "</td><td>" . $row["lastName"] . "</td><td>" . $row["city"] . "</td><td>" . $row["phoneNumber"] . "</td><td>" . $row["agentId"] . "</td><td>" . $row["quantity"] . "</td>";
+                  echo "<td>" . $row["customerId"] . "</td><td>" . $row["productId"] . "</td><td>" . $row["productDescription"] . "</td><td>" . $row["quantity"] . "</td>";
                   echo "</tr>";
               }
               mysqli_free_result($result);
