@@ -226,7 +226,7 @@
         </div>
       </div>
 
-      <blockquote><h5>Customers that have Purchased more than a Given Quantity of any Product:</h5></blockquote>
+      <blockquote><h5>Customers That Have Purchased More Than a Given Quantity of Any Product:</h5></blockquote>
       <div class="row">
         <div class="col s12 m6">
           <div class="card blue-grey darken-1">
@@ -242,6 +242,21 @@
                 <i class="material-icons right">send</i>
               </button>
               </form>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <blockquote><h5>Products That Have Not Been Purchased:</h5></blockquote>
+      <div class="row">
+        <div class="col s12 m6">
+          <div class="card blue-grey darken-1">
+            <div class="card-content white-text">
+              <span class="card-title">Product List</span>
+              <p>Click the button to see products that have not been purchased</p>
+            </div>
+            <div class="card-action">
+              <a class="waves-effect waves-light btn" href="unpurchasedproducts.php">Unpurchased Products</a>
             </div>
           </div>
         </div>
