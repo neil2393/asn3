@@ -81,6 +81,7 @@
                   echo "<td>" . $row["customerId"] . "</td><td>" . $row["phoneNumber"] . "</td>";
                   echo "</tr>";
               }
+              mysqli_free_result($result);
               echo "</table>";
             ?>
           </div>
