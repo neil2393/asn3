@@ -176,9 +176,9 @@
             </div>
             <div class="card-action">
                 <!-- Dropdown Trigger -->
-                <a class='dropdown-button btn' href='' data-activates='dropdown1'>Customer ID</a>
+                <a class='dropdown-button btn' href='' data-activates='dropdown2'>Customer ID</a>
                 <!-- Dropdown Structure -->
-                <ul id='dropdown1' class='dropdown-content'>
+                <ul id='dropdown2' class='dropdown-content'>
                   <?php
                     $query = "SELECT * FROM customers";
                     $result = mysqli_query($connection,$query);
