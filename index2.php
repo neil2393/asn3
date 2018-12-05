@@ -226,6 +226,27 @@
         </div>
       </div>
 
+      <blockquote><h5>Customers that have Purchased more than a Given Quantity of any Product:</h5></blockquote>
+      <div class="row">
+        <div class="col s12 m6">
+          <div class="card blue-grey darken-1">
+            <div class="card-content white-text">
+              <span class="card-title">Quantity</span>
+              <p>Select a quantity</p>
+              <form action="quantity.php" method="post">
+                  <div class="input-field blue-grey darken-1">
+                  <input name="quantity" type="text" class="validate">
+                  <label for="quantity">Quantity</label>
+                  </div>
+              <button class="btn waves-effect waves-light" type="submit" name="action">Submit
+                <i class="material-icons right">send</i>
+              </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+
     <?php
       mysqli_close($connection);
     ?>

@@ -42,7 +42,7 @@
             <?php
               $phoneNumber = (int)$_POST["phoneNumber"];
 
-              if ($phoneNumber == 0) {
+              if ($phoneNumber != int) {
                 echo "<a class='waves-effect waves-light btn' href='index2.php'>Go Back</a><br>";
                 die("Error - Please make sure Phone Number is an integer value. Try again.");
               }
