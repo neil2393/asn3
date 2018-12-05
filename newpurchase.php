@@ -81,7 +81,6 @@
                   }
                   echo "Your new purchase was successfuly added.";
               }
-              mysqli_close($connection);
             ?>
           </div>
         </div>
