@@ -45,11 +45,18 @@
               $phoneNumber = (int)$_POST["phoneNumber"];
               $agentId = (int)$_POST["agentId"];
 
-              if ($customerId != int) OR ($phoneNumber != int) OR ($agentId != int) {
+              if ($customerId != int) {
                 echo "<a class='waves-effect waves-light btn' href='index2.php'>Go Back</a><br>";
                 die("Error - Customer ID, Phone Number, and Agent ID must be integer values. Please try again.");
               }
-
+              elseif ($phoneNumber != int) {
+                echo "<a class='waves-effect waves-light btn' href='index2.php'>Go Back</a><br>";
+                die("Error - Customer ID, Phone Number, and Agent ID must be integer values. Please try again.");
+              }
+              elseif ($agentId != int) {
+                echo "<a class='waves-effect waves-light btn' href='index2.php'>Go Back</a><br>";
+                die("Error - Customer ID, Phone Number, and Agent ID must be integer values. Please try again.");                
+              }
 
               $query = "SELECT * FROM customers";
               $result = mysqli_query($connection,$query);
