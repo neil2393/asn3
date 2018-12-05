@@ -67,7 +67,7 @@
             <form action='updatephonenumber.php' method='post'>
                 <div class="input-field blue-grey darken-1">
                 <input name="phoneNumber" type="text" class="validate">
-                <label for="phoneNumber">New Phone Number</label>
+                <label for="phoneNumber">New Phone Number (Integer values only)</label>
                 </div>
             <button class="btn waves-effect waves-light" type="submit" name="action">Update Phone Number
               <i class="material-icons right">send</i>
