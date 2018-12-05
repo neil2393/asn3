@@ -45,17 +45,9 @@
               $phoneNumber = (int)$_POST["phoneNumber"];
               $agentId = (int)$_POST["agentId"];
 
-              if ($customerId != int) {
+              if ($customerId != int && $phoneNumber != int && $agentId != int) {
                 echo "<a class='waves-effect waves-light btn' href='index2.php'>Go Back</a><br>";
-                die("Error - Customer ID, Phone Number, and Agent ID must be integer values. Please try again.");
-              }
-              elseif ($phoneNumber != int) {
-                echo "<a class='waves-effect waves-light btn' href='index2.php'>Go Back</a><br>";
-                die("Error - Customer ID, Phone Number, and Agent ID must be integer values. Please try again.");
-              }
-              elseif ($agentId != int) {
-                echo "<a class='waves-effect waves-light btn' href='index2.php'>Go Back</a><br>";
-                die("Error - Customer ID, Phone Number, and Agent ID must be integer values. Please try again.");                
+                die("Error - Please make sure Customer ID, Phone Number, and Agent ID are integer values. Try again.");
               }
 
               $query = "SELECT * FROM customers";
@@ -66,14 +58,14 @@
               while ($row = mysqli_fetch_assoc($result)) {
                 if ($row["customerId"] == $customerId) {
                   echo "<a class='waves-effect waves-light btn' href='index2.php'>Go Back</a><br>";
-                  die("Error - You cannot use an existing customer ID. Please try again.");
+                  die("Error - You cannot use an existing customer ID. Try again.");
                 }
               }
               
               $query1 = 'INSERT INTO customers (customerId, firstName, lastName, city, phoneNumber, agentId) VALUES ("' . $customerId . '", "' . $firstName . '", "' . $lastName . '", "' . $city . '", "' . $phoneNumber . '", "' . $agentId . '");';
               if (!mysqli_query($connection, $query1)) {
                 echo "<a class='waves-effect waves-light btn' href='index2.php'>Go Back</a><br>";
-                die("Error - Please make sure your Agent ID exists.<br>" . mysqli_error($connection));
+                die("Error - Please make sure your Agent ID exists. Try again.<br>" . mysqli_error($connection));
               }
               echo 'Your new customer was successfully added.';
 

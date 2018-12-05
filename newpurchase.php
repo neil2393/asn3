@@ -69,7 +69,7 @@
                   else {
                     //  echo "Quantity should be positive!";
                       echo "<a class='waves-effect waves-light btn' href='index2.php'>Go Back</a><br>";
-                      die("Error - You can only enter positive quantities.");
+                      die("Error - You can only enter positive quantities. Try again.");
                   }
               }
               // Otherwise, insert values into purchases
@@ -77,7 +77,7 @@
                   $query = 'INSERT INTO purchases(customerId, productId, quantity) VALUES(' . $customerId . ',' . $productId . ',"' . $quantity . '")';
                   if (!mysqli_query($connection, $query)) {
                       echo "<a class='waves-effect waves-light btn' href='index2.php'>Go Back</a><br>";
-                      die("Error - Either the Customer ID or Product ID is incorrect.<br>" . mysqli_error($connection));
+                      die("Error - Either the Customer ID or Product ID is incorrect. Try again.<br>" . mysqli_error($connection));
                   }
                   echo "Your new purchase was successfuly added.";
               }
