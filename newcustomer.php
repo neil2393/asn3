@@ -45,6 +45,12 @@
               $phoneNumber = (int)$_POST["phoneNumber"];
               $agentId = (int)$_POST["agentId"];
 
+              if ($customerId != int) OR ($phoneNumber != int) OR ($agentId != int) {
+                echo "<a class='waves-effect waves-light btn' href='index2.php'>Go Back</a><br>";
+                die("Error - Customer ID, Phone Number, and Agent ID must be integer values. Please try again.");
+              }
+
+
               $query = "SELECT * FROM customers";
               $result = mysqli_query($connection,$query);
               if (!$result) {
@@ -60,7 +66,7 @@
               $query1 = 'INSERT INTO customers (customerId, firstName, lastName, city, phoneNumber, agentId) VALUES ("' . $customerId . '", "' . $firstName . '", "' . $lastName . '", "' . $city . '", "' . $phoneNumber . '", "' . $agentId . '");';
               if (!mysqli_query($connection, $query1)) {
                 echo "<a class='waves-effect waves-light btn' href='index2.php'>Go Back</a><br>";
-                die("Error. Please make sure Customer ID and Agent ID are integer values.<br>" . mysqli_error($connection));
+                die("Error - Please make sure your Agent ID exists.<br>" . mysqli_error($connection));
               }
               echo 'Your new customer was successfully added.';
 
