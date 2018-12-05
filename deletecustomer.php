@@ -43,7 +43,7 @@
 
               $query = "DELETE FROM customers WHERE customerId = " . $customerId;
               $result = mysqli_query($connection,$query);
-              echo $customerId
+              echo $customerId;
               if (!$result) {
                 die("databases query failed.");
               }
