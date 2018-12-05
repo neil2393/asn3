@@ -41,8 +41,9 @@
               $customerId = $_GET['category'];
               $_SESSION['customerId'] = $_GET['category'];
 
-              $query1 = "DELETE FROM customers WHERE customerId = " . $customerId;
-              $result = mysqli_query($connection,$query1);
+              $query = "DELETE FROM customers WHERE customerId = " . $customerId;
+              $result = mysqli_query($connection,$query);
+              echo $customerId
               if (!$result) {
                 die("databases query failed.");
               }
