@@ -47,8 +47,12 @@
                 die("Error - Please make sure Phone Number is an integer value. Try again.");
               }
 
-              $query = 'UPDATE customers SET phoneNumber = ' . $phoneNumber . ' WHERE customerId = ' . $_SESSION['customerId'];
-
+              $query1 = "UPDATE customers SET phoneNumber = " . $phoneNumber . " WHERE customerId = " . $_SESSION['customerId'];
+              $result = mysqli_query($connection,$query);
+              if (!$result) {
+                die("databases query failed.");
+              }
+              mysqli_free_result($result);
               echo "Your phone number was successfully updated.";
             ?>
           </div>
