@@ -72,15 +72,6 @@
                     }
                     mysqli_free_result($result);
                   ?>
-                  <!--
-                    <li><a href="getpurchasedata.php?category=31">31</a></li>
-                    <li><a href="getpurchasedata.php?category=12">12</a></li>
-                    <li><a href="getpurchasedata.php?category=15">15</a></li>
-                    <li><a href="getpurchasedata.php?category=14">14</a></li>
-                    <li><a href="getpurchasedata.php?category=10">10</a></li>
-                    <li><a href="getpurchasedata.php?category=21">21</a></li>
-                    <li><a href="getpurchasedata.php?category=13">13</a></li>
-                  -->
                 </ul>
             </div>
           </div>
@@ -93,7 +84,7 @@
           <div class="card blue-grey darken-1">
             <div class="card-content white-text">
               <span class="card-title">Product List</span>
-              <p>Sort product information in the following orders:</p>
+              <p>Sort product information in the following orders</p>
             </div>
             <div class="card-action">
               <a class="waves-effect waves-light btn" href="getproductdata.php?category=ascDesc">Ascending Description</a>
@@ -170,6 +161,36 @@
                 <i class="material-icons right">send</i>
               </button>
               </form>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <blockquote><h5>Update a customer's phone number:</h5></blockquote>
+      <div class="row">
+        <div class="col s12 m6">
+          <div class="card blue-grey darken-1">
+            <div class="card-content white-text">
+              <span class="card-title">Customer Phone Number Information</span>
+              <p>Choose a customer ID to update their phone number</p>
+            </div>
+            <div class="card-action">
+                <!-- Dropdown Trigger -->
+                <a class='dropdown-button btn' href='' data-activates='dropdown1'>Customer ID</a>
+                <!-- Dropdown Structure -->
+                <ul id='dropdown1' class='dropdown-content'>
+                  <?php
+                    $query = "SELECT * FROM customers";
+                    $result = mysqli_query($connection,$query);
+                    if (!$result) {
+                      die("databases query failed.");
+                    }
+                    while ($row = mysqli_fetch_assoc($result)) {
+                      echo "<li><a href='updatephonenumber.php?category=" . $row["customerId"] . "'>" . $row["customerId"] . "</a></li>";
+                    }
+                    mysqli_free_result($result);
+                  ?>
+                </ul>
             </div>
           </div>
         </div>
