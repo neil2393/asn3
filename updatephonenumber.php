@@ -52,7 +52,6 @@
 
               $query = "INSERT INTO customers.phoneNumber WHERE customers.customerId = " . $customerId . " VALUES ('" . $phoneNumber . "')";
               echo "Your phone number was successfully updated.";
-              }
             ?>
           </div>
         </div>
