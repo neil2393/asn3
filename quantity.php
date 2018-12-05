@@ -39,10 +39,11 @@
               include 'connectdb.php';
 
               $quantity = $_POST["quantity"];
-              $query = 'SELECT * FROM customers, purchases WHERE customers.customerId = purchases.customerId AND purchases.quantity > ' . $quantity;
+              $query = 'SELECT * FROM customers, purchases, products WHERE customers.customerId = purchases.customerId AND purchases.quantity > ' . $quantity;
               $result = mysqli_query($connection, $query);
               if (!$result) {
-                  die("Querying for customers who bought more than a certain quantity failed.");
+                  echo "<a class='waves-effect waves-light btn' href='index2.php'>Go Back</a><br>";
+                  die("database query failed.");
               }
               echo "<table>";
               echo "<tr><th>Customer ID</th><th>First Name</th><th>Last Name</th><th>City</th><th>Phone Number</th><th>Agent ID</th><th>Quantity</th></tr>";
