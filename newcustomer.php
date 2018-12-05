@@ -38,14 +38,14 @@
               session_start();
               include 'connectdb.php';
 
-              $customerId = $_POST["customerId"];
+              $customerId = (int)$_POST["customerId"];
               $firstName = $_POST["firstName"];
               $lastName = $_POST["lastName"];
               $city = $_POST["city"];
-              $phoneNumber = $_POST["phoneNumber"];
-              $agentId = $_POST["agentId"];
+              $phoneNumber = (int)$_POST["phoneNumber"];
+              $agentId = (int)$_POST["agentId"];
 
-              if ($customerId != int && $phoneNumber != int && $agentId != int) {
+              if ($customerId == 0 || $phoneNumber == 0 || $agentId == 0) {
                 echo "<a class='waves-effect waves-light btn' href='index2.php'>Go Back</a><br>";
                 die("Error - Please make sure Customer ID, Phone Number, and Agent ID are integer values. Try again.");
               }
