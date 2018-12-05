@@ -48,7 +48,7 @@
               }
 
               $query1 = "UPDATE customers SET phoneNumber = " . $phoneNumber . " WHERE customerId = " . $_SESSION['customerId'];
-              $result = mysqli_query($connection,$query);
+              $result = mysqli_query($connection,$query1);
               if (!$result) {
                 die("databases query failed.");
               }
