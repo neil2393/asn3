@@ -42,7 +42,7 @@
       echo "<blockquote><h5>Customer " . $customerId . " Phone Number Information:</h5></blockquote>"
     ?>
     <div class="row">
-      <div class="col s12 m6">
+      <div class="col s12 m4">
         <div class="card blue-grey darken-1">
           <div class="card-content white-text">
             <?php
