@@ -38,12 +38,12 @@
               session_start();
               include 'connectdb.php';
 
-              $customerId = (int)$_POST["customerId"];
+              $customerId = $_POST["customerId"];
               $firstName = $_POST["firstName"];
               $lastName = $_POST["lastName"];
               $city = $_POST["city"];
-              $phoneNumber = (int)$_POST["phoneNumber"];
-              $agentId = (int)$_POST["agentId"];
+              $phoneNumber = $_POST["phoneNumber"];
+              $agentId = $_POST["agentId"];
 
               if ($customerId != int && $phoneNumber != int && $agentId != int) {
                 echo "<a class='waves-effect waves-light btn' href='index2.php'>Go Back</a><br>";
