@@ -47,10 +47,8 @@
                 die("Error - Please make sure Phone Number is an integer value. Try again.");
               }
 
-              $query = 'INSERT INTO customers (phoneNumber) VALUES ("' . $phoneNumber . '") WHERE customerId = ' . $_SESSION['customerId'];
+              $query = 'UPDATE customers SET phoneNumber = ' . $phoneNumber . ' WHERE customerId = ' . $_SESSION['customerId'];
 
-            /*  WHERE customers.customerId = " . $_SESSION['customerId'] . " VALUES ('" . $phoneNumber . "')";
-            */
               echo "Your phone number was successfully updated.";
             ?>
           </div>
