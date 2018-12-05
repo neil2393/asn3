@@ -45,7 +45,8 @@
               $result = mysqli_query($connection,$query);
               echo $customerId;
               if (!$result) {
-                die("databases query failed.");
+                echo "<a class='waves-effect waves-light btn' href='index2.php'>Go Back</a><br>";
+                die("Error - Cannot delete due to constraints. Customer ID is referenced elsewhere.<br>" . mysqli_error($connection));
               }
               echo 'Your customer was successfully deleted.';
             ?>
