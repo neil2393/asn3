@@ -61,9 +61,16 @@
               }
               mysqli_free_result($result);
               echo "</table>";
-
-              echo "<a class='waves-effect waves-light btn' href='updatephonenumber.php'>Update Phone Number</a>"
             ?>
+            <form action="updatephonenumber.php" method="post">
+                <div class="input-field blue-grey darken-1">
+                <input name="phoneNumber" type="text" class="validate">
+                <label for="phoneNumber">New Phone Number</label>
+                </div>
+            <button class="btn waves-effect waves-light" type="submit" name="action">Update Phone Number
+              <i class="material-icons right">send</i>
+            </button>
+            </form>
           </div>
         </div>
       </div>
