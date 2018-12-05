@@ -61,6 +61,8 @@
               }
               mysqli_free_result($result);
               echo "</table>";
+
+              echo "<a class='waves-effect waves-light btn' href='updatephonenumber.php'>Update Phone Number</a>"
             ?>
           </div>
         </div>

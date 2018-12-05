@@ -48,13 +48,13 @@
         </div>
       </div>
 
-      <blockquote><h5>Products that a customer has purchased:</h5></blockquote>
+      <blockquote><h5>Products that a Customer has Purchased:</h5></blockquote>
       <div class="row">
         <div class="col s12 m6">
           <div class="card blue-grey darken-1">
             <div class="card-content white-text">
               <span class="card-title">Customer Purchase Information</span>
-              <p>Choose a customer ID to see all of their purchases</p>
+              <p>Select a customer ID to see all of their purchases</p>
             </div>
             <div class="card-action">
                 <!-- Dropdown Trigger -->
@@ -102,7 +102,7 @@
           <div class="card blue-grey darken-1">
             <div class="card-content white-text">
               <span class="card-title">New Purchase</span>
-              <p>Enter the following information to enter a new purchase:</p>
+              <p>Enter the following information to enter a new purchase</p>
               <form action="newpurchase.php" method="post">
                   <div class="input-field blue-grey darken-1">
                   <input name="customerId" type="text" class="validate">
@@ -131,7 +131,7 @@
           <div class="card blue-grey darken-1">
             <div class="card-content white-text">
               <span class="card-title">New Customer</span>
-              <p>Enter the following information to enter a new customer:</p>
+              <p>Enter the following information to enter a new customer</p>
               <form action="newcustomer.php" method="post">
                   <div class="input-field blue-grey darken-1">
                   <input name="customerId" type="text" class="validate">
@@ -166,13 +166,13 @@
         </div>
       </div>
 
-      <blockquote><h5>Update a customer's phone number:</h5></blockquote>
+      <blockquote><h5>Update a Customer's Phone Number Information:</h5></blockquote>
       <div class="row">
         <div class="col s12 m6">
           <div class="card blue-grey darken-1">
             <div class="card-content white-text">
-              <span class="card-title">Customer Phone Number Information</span>
-              <p>Choose a customer ID to update their phone number</p>
+              <span class="card-title">Update Phone Number</span>
+              <p>Select a customer ID to update their phone number</p>
             </div>
             <div class="card-action">
                 <!-- Dropdown Trigger -->
@@ -186,7 +186,7 @@
                       die("databases query failed.");
                     }
                     while ($row = mysqli_fetch_assoc($result)) {
-                      echo "<li><a href='updatephonenumber.php?category=" . $row["customerId"] . "'>" . $row["customerId"] . "</a></li>";
+                      echo "<li><a href='displayphonenumber.php?category=" . $row["customerId"] . "'>" . $row["customerId"] . "</a></li>";
                     }
                     mysqli_free_result($result);
                   ?>
