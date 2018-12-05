@@ -68,7 +68,6 @@
                 die("Error - Please make sure your Agent ID exists. Try again.<br>" . mysqli_error($connection));
               }
               echo 'Your new customer was successfully added.';
-              mysqli_close($connection);
             ?>
           </div>
         </div>
