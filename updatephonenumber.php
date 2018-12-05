@@ -53,10 +53,10 @@
                   die("databases query failed.");
               }
               echo "<table>";
-              echo "<tr><th>Product ID</th><th>Product Description</th><th>Cost per Item</th><th>Quantity</th>";
+              echo "<tr><th>Customer ID</th><th>First Name</th><th>Last Name</th><th>City</th><th>Phone Number</th><th>Agent ID</th></tr>";
               while ($row = mysqli_fetch_assoc($result)) {
                   echo "<tr>";
-                  echo "<td>" . $row["productId"] . "</td><td>" . $row["productDescription"] . "</td><td>" . $row["costPerItem"] . "</td><td>" . $row["quantity"] . "</td>";
+                  echo "<td>" . $row["customerId"] . "</td><td>" . $row["firstName"] . "</td><td>" . $row["lastName"] . "</td><td>" . $row["city"] . "</td><td>" . $row["phoneNumber"] . "</td><td>" . $row["agentId"] . "</td>";
                   echo "</tr>";
               }
               mysqli_free_result($result);
