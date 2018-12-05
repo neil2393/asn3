@@ -68,7 +68,7 @@
                       die("databases query failed.");
                     }
                     while ($row = mysqli_fetch_assoc($result)) {
-                      echo "<li><a href='getpurchasedata.php?category=" . $row["customerId"] . "'>" . $row["customerId"] . "</a></li>"
+                      echo "<li><a href='getpurchasedata.php?category=" . $row["customerId"] . "'>" . $row["customerId"] . "</a></li>";
                     }
                     mysqli_free_result($result);
                   ?>
