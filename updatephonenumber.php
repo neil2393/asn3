@@ -40,9 +40,9 @@
         <div class="card blue-grey darken-1">
           <div class="card-content white-text">
             <?php
-              $phoneNumber = $_POST["phoneNumber"];
+              $phoneNumber = (int)$_POST["phoneNumber"];
 
-              if ($phoneNumber != int) {
+              if ($phoneNumber == 0) {
                 echo "<a class='waves-effect waves-light btn' href='index2.php'>Go Back</a><br>";
                 die("Error - Please make sure Phone Number is an integer value. Try again.");
               }
