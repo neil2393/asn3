@@ -50,7 +50,7 @@
                 die("Error - Please make sure Phone Number is an integer value. Try again.");
               }
 
-              $query = "INSERT INTO customers.phoneNumber WHERE customers.customerId = " . $customerId . " VALUES ('" . $phoneNumber . "')";
+              $query = "INSERT INTO customers.phoneNumber WHERE customers.customerId = " . $_SESSION['customerId'] . " VALUES ('" . $phoneNumber . "')";
               echo "Your phone number was successfully updated.";
             ?>
           </div>
@@ -60,14 +60,14 @@
 
 
     <?php
-      echo "<blockquote><h5>Updated Customer " . $customerId . " Phone Number Information:</h5></blockquote>"
+      echo "<blockquote><h5>Updated Customer " . $_SESSION['customerId'] . " Phone Number Information:</h5></blockquote>"
     ?>
     <div class="row">
       <div class="col s12 m6">
         <div class="card blue-grey darken-1">
           <div class="card-content white-text">
             <?php
-              $query = "SELECT * FROM customers WHERE customers.customerId = " . $customerId;
+              $query = "SELECT * FROM customers WHERE customers.customerId = " . $_SESSION['customerId'];
               $result = mysqli_query($connection,$query);
               if (!$result) {
                   echo "<a class='waves-effect waves-light btn' href='index2.php'>Go Back</a><br>";
