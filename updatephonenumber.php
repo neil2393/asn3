@@ -32,9 +32,6 @@
     <?php
       session_start();
       include 'connectdb.php';
-
-      $customerId = $_GET['category'];
-      $_SESSION['customerId'] = $_GET['category'];
     ?>
 
     <br>
