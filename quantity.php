@@ -39,7 +39,7 @@
               include 'connectdb.php';
 
               $quantity = $_POST["quantity"];
-              $query = 'SELECT * FROM customers, purchases, products WHERE products.productId = purchases.productId AND customers.customerId = purchases.customerId AND purchases.quantity > ' . $quantity . 'ORDER BY customerId';
+              $query = 'SELECT * FROM customers, purchases, products ORDER BY customerId WHERE products.productId = purchases.productId AND customers.customerId = purchases.customerId AND purchases.quantity > ' . $quantity;
               $result = mysqli_query($connection, $query);
               if (!$result) {
                   echo "<a class='waves-effect waves-light btn' href='index2.php'>Go Back</a><br>";
