@@ -43,7 +43,7 @@
         <div class="card blue-grey darken-1">
           <div class="card-content white-text">
             <?php
-              $phoneNumber = (int)$_POST["customerId"];
+              $phoneNumber = (int)$_POST["phoneNumber"];
 
               if ($phoneNumber == 0) {
                 echo "<a class='waves-effect waves-light btn' href='index2.php'>Go Back</a><br>";
