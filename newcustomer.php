@@ -39,9 +39,9 @@
               include 'connectdb.php';
 
               $customerId = (int)$_POST["customerId"];
-              $firstName = (int)$_POST["firstName"];
-              $lastName = (int)$_POST["lastName"];
-              $city = (int)$_POST["city"];
+              $firstName = $_POST["firstName"];
+              $lastName = $_POST["lastName"];
+              $city = $_POST["city"];
               $phoneNumber = (int)$_POST["phoneNumber"];
               $agentId = (int)$_POST["agentId"];
 
