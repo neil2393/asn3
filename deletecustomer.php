@@ -47,7 +47,7 @@
               if (!$result) {
                 die("databases query failed.");
               }
-
+              mysqli_free_result($result);
               echo 'Your customer was successfully deleted.';
             ?>
           </div>
