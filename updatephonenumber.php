@@ -52,7 +52,6 @@
               if (!$result) {
                 die("databases query failed.");
               }
-              mysqli_free_result($result);
               echo "Your phone number was successfully updated.";
             ?>
           </div>
