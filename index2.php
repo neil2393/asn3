@@ -262,6 +262,36 @@
         </div>
       </div>
 
+      <blockquote><h5>Total Number of Purchases and Sales for a Particular Product:</h5></blockquote>
+      <div class="row">
+        <div class="col s12 m6">
+          <div class="card blue-grey darken-1">
+            <div class="card-content white-text">
+              <span class="card-title">Total Number of Purchases/Sales per Product</span>
+              <p>Select a product ID to see the total number of purchases and its sales</p>
+            </div>
+            <div class="card-action">
+                <!-- Dropdown Trigger -->
+                <a class='dropdown-button btn' href='' data-activates='dropdown4'>Product ID</a>
+                <!-- Dropdown Structure -->
+                <ul id='dropdown4' class='dropdown-content'>
+                  <?php
+                    $query = "SELECT * FROM products";
+                    $result = mysqli_query($connection,$query);
+                    if (!$result) {
+                      die("databases query failed.");
+                    }
+                    while ($row = mysqli_fetch_assoc($result)) {
+                      echo "<li><a href='listproductdata.php?category=" . $row["productId"] . "'>" . $row["productId"] . "</a></li>";
+                    }
+                    mysqli_free_result($result);
+                  ?>
+                </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
     <?php
       mysqli_close($connection);
     ?>
