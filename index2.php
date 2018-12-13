@@ -105,15 +105,15 @@
               <p>Enter the following information to enter a new purchase</p>
               <form action="newpurchase.php" method="post">
                   <div class="input-field blue-grey darken-1">
-                  <input name="customerId" type="text" class="validate">
+                  <input name="customerId" type="text" class="form-control">
                   <label for="customerId">Customer ID</label>
                   </div>
                   <div class="input-field blue-grey darken-1">
-                  <input name="productId" type="text" class="validate">
+                  <input name="productId" type="text" class="form-control">
                   <label for="productId">Product ID</label>
                   </div>
                   <div class="input-field blue-grey darken-1">
-                  <input name="quantity" type="text" class="validate">
+                  <input name="quantity" type="text" class="form-control">
                   <label for="quantity">Quantity</label>
                   </div>
               <button class="btn waves-effect waves-light" type="submit" name="action">Submit
@@ -134,27 +134,27 @@
               <p>Enter the following information to enter a new customer</p>
               <form action="newcustomer.php" method="post">
                   <div class="input-field blue-grey darken-1">
-                  <input name="customerId" type="text" class="validate">
+                  <input name="customerId" type="text" class="form-control">
                   <label for="customerId">Customer ID</label>
                   </div>
                   <div class="input-field blue-grey darken-1">
-                  <input name="firstName" type="text" class="validate">
+                  <input name="firstName" type="text" class="form-control">
                   <label for="firstName">First Name</label>
                   </div>
                   <div class="input-field blue-grey darken-1">
-                  <input name="lastName" type="text" class="validate">
+                  <input name="lastName" type="text" class="form-control">
                   <label for="lastName">Last Name</label>
                   </div>
                   <div class="input-field blue-grey darken-1">
-                  <input name="city" type="text" class="validate">
+                  <input name="city" type="text" class="form-control">
                   <label for="city">City</label>
                   </div>
                   <div class="input-field blue-grey darken-1">
-                  <input name="phoneNumber" type="text" class="validate">
+                  <input name="phoneNumber" type="text" class="form-control">
                   <label for="phoneNumber">Phone Number</label>
                   </div>
                   <div class="input-field blue-grey darken-1">
-                  <input name="agentId" type="text" class="validate">
+                  <input name="agentId" type="text" class="form-control">
                   <label for="agentId">Agent ID</label>
                   </div>
               <button class="btn waves-effect waves-light" type="submit" name="action">Submit
@@ -235,7 +235,7 @@
               <p>Select a quantity</p>
               <form action="quantity.php" method="post">
                   <div class="input-field blue-grey darken-1">
-                  <input name="quantity" type="text" class="validate">
+                  <input name="quantity" type="text" class="form-control">
                   <label for="quantity">Quantity</label>
                   </div>
               <button class="btn waves-effect waves-light" type="submit" name="action">Submit
