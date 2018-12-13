@@ -46,7 +46,7 @@
         <div class="card blue-grey darken-1">
           <div class="card-content white-text">
             <?php
-              $query = "SELECT SUM(purchases.quantity) AS totalPurchases, products.productDescription (products.costPerItem * SUM(purchases.quantity)) AS totalSales FROM products, purchases WHERE products.productId = purchases.productId AND products.productId = " . $productId;
+              $query = "SELECT SUM(purchases.quantity) AS totalPurchases, products.productId, products.productDescription, (products.costPerItem * SUM(purchases.quantity)) AS totalSales FROM products, purchases WHERE products.productId = purchases.productId AND products.productId = " . $productId;
               //$query .= "customers.customerId = " . $selected_category . "))";
               $result = mysqli_query($connection,$query);
               if (!$result) {
@@ -57,7 +57,7 @@
               echo "<tr><th>Product ID</th><th>Product Description</th><th>Total # of Purchases</th><th>Total Sales</th>";
               while ($row = mysqli_fetch_assoc($result)) {
                   echo "<tr>";
-                  echo "<td>" . $productId . "</td><td>" . $row["productDescription"] . "</td><td>" . $row["totalPurchases"] . "</td><td>" . $row["totalSales"] . "</td>";
+                  echo "<td>" . $row["productId"] . "</td><td>" . $row["productDescription"] . "</td><td>" . $row["totalPurchases"] . "</td><td>" . $row["totalSales"] . "</td>";
                   echo "</tr>";
               }
               mysqli_free_result($result);
