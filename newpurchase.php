@@ -84,7 +84,7 @@
                 }
               }
               else {
-                echo ''
+                echo '';
               }
             ?>
           </div>
