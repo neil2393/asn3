@@ -32,53 +32,32 @@
     <?php
       session_start();
       include 'connectdb.php';
+
+      $productId = $_GET['category'];
+      $_SESSION['productId'] = $_GET['category'];
     ?>
 
     <br>
-    <div class="row">
-      <div class="col s12 m6">
-        <div class="card blue-grey darken-1">
-          <div class="card-content white-text">
-            <?php
-              $phoneNumber = (int)$_POST["phoneNumber"];
-
-              if ($phoneNumber == 0) {
-                echo "<a class='waves-effect waves-light btn' href='index2.php'>Go Back</a><br>";
-                die("Error - Please make sure Phone Number is an integer value and not 0. Try again.");
-              }
-
-              $query1 = "UPDATE customers SET phoneNumber = " . $phoneNumber . " WHERE customerId = " . $_SESSION['customerId'];
-              $result = mysqli_query($connection,$query1);
-              if (!$result) {
-                die("databases query failed.");
-              }
-              echo "Your phone number was successfully updated.";
-            ?>
-          </div>
-        </div>
-      </div>
-    </div>
-
-
     <?php
-      echo "<blockquote><h5>Updated Customer " . $_SESSION['customerId'] . " Phone Number Information:</h5></blockquote>"
+      echo "<blockquote><h5>Customer " . $customerId . " Purchase Information:</h5></blockquote>"
     ?>
     <div class="row">
       <div class="col s12 m6">
         <div class="card blue-grey darken-1">
           <div class="card-content white-text">
             <?php
-              $query = "SELECT * FROM customers WHERE customers.customerId = " . $_SESSION['customerId'];
+              $query = "SELECT SUM(purchases.quantity) AS totalPurchases, products.productDescription, (products.costPerItem * SUM(purchases.quantity)) AS totalSales FROM products, purchases WHERE products.productId = purchases.productId AND products.productId = " . $productId;
+              //$query .= "customers.customerId = " . $selected_category . "))";
               $result = mysqli_query($connection,$query);
               if (!$result) {
                   echo "<a class='waves-effect waves-light btn' href='index2.php'>Go Back</a><br>";
                   die("databases query failed.");
               }
               echo "<table>";
-              echo "<tr><th>Customer ID</th><th>Phone Number</th></tr>";
+              echo "<tr><th>Product ID</th><th>Product Description</th><th>Total # of Purchases</th><th>Total Sales</th>";
               while ($row = mysqli_fetch_assoc($result)) {
                   echo "<tr>";
-                  echo "<td>" . $row["customerId"] . "</td><td>" . $row["phoneNumber"] . "</td>";
+                  echo "<td>" . $row["productId"] . "</td><td>" . $row["productDescription"] . "</td><td>" . $row["totalPurchases"] . "</td><td>" . $row["totalSales"] . "</td>";
                   echo "</tr>";
               }
               mysqli_free_result($result);
