@@ -166,18 +166,18 @@
                   <input name="agentId" id="agentId" type="text" class="validate">
                   <label for="agentId">Agent ID</label>
                   </div>
-                  <script type="text/javascript">
-                    $('#newcustomer').submit(function() 
-                    {
-                        if ($.trim($("#customerId").val()) === "" || $.trim($("#firstName").val()) === "" || $.trim($("#lastName").val()) === "" || $.trim($("#city").val()) === "" || $.trim($("#phoneNumber").val()) === "" || $.trim($("#agentId").val()) === "") {
-                            alert('Please enter all fields.');
-                        return false;
-                        }
-                    });
-                  </script>
               <button class="btn waves-effect waves-light" type="submit" name="action">Submit
                 <i class="material-icons right">send</i>
               </button>
+              <script type="text/javascript">
+                $("#newcustomer").submit(function() 
+                {
+                    if ($.trim($("#customerId").val()) === "" || $.trim($("#firstName").val()) === "" || $.trim($("#lastName").val()) === "" || $.trim($("#city").val()) === "" || $.trim($("#phoneNumber").val()) === "" || $.trim($("#agentId").val()) === "") {
+                        alert('Please enter all fields.');
+                    return false;
+                    }
+                });
+              </script>
               </form>
             </div>
           </div>
