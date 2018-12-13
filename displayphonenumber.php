@@ -66,7 +66,7 @@
             ?>
             <form action='updatephonenumber.php' method='post'>
                 <div class="input-field blue-grey darken-1">
-                <input name="phoneNumber" type="text" class="form-control">
+                <input name="phoneNumber" type="text" class="validate">
                 <label for="phoneNumber">New Phone Number</label>
                 </div>
             <button class="btn waves-effect waves-light" type="submit" name="action">Update Phone Number
