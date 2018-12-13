@@ -251,13 +251,13 @@
             <div class="card-content white-text">
               <span class="card-title">Quantity</span>
               <p>Select a quantity</p>
-              <form action="quantity.php" id="quantity" method="post">
+              <form action="quantity.php" id="quantityForm" method="post">
                   <div class="input-field blue-grey darken-1">
                   <input name="quantity" id="quantity" type="text" class="validate">
                   <label for="quantity">Quantity</label>
                   </div>
                   <script type="text/javascript">
-                    $('#quantity').submit(function() 
+                    $('#quantityForm').submit(function() 
                     {
                         if ($.trim($("#quantity").val()) === "") {
                             alert('Please enter all fields.');
