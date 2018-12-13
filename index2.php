@@ -103,19 +103,28 @@
             <div class="card-content white-text">
               <span class="card-title">New Purchase</span>
               <p>Enter the following information to enter a new purchase</p>
-              <form action="newpurchase.php" method="post">
+              <form action="newpurchase.php" id="newpurchase" method="post">
                   <div class="input-field blue-grey darken-1">
-                  <input name="customerId" type="text" class="validate">
+                  <input name="customerId" id="customerId" type="text" class="validate">
                   <label for="customerId">Customer ID</label>
                   </div>
                   <div class="input-field blue-grey darken-1">
-                  <input name="productId" type="text" class="validate">
+                  <input name="productId" id="productId" type="text" class="validate">
                   <label for="productId">Product ID</label>
                   </div>
                   <div class="input-field blue-grey darken-1">
-                  <input name="quantity" type="text" class="validate">
+                  <input name="quantity" id="quantity" type="text" class="validate">
                   <label for="quantity">Quantity</label>
                   </div>
+                  <script type="text/javascript">
+                    $('#newpurchase').submit(function() 
+                    {
+                        if ($.trim($("#customerId").val()) === "" || $.trim($("#productId").val()) === "" || $.trim($("#quantity").val()) === "") {
+                            alert('Please enter all fields.');
+                        return false;
+                        }
+                    });
+                  </script>
               <button class="btn waves-effect waves-light" type="submit" name="action">Submit
                 <i class="material-icons right">send</i>
               </button>

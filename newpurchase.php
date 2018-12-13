@@ -42,49 +42,44 @@
               $productId = (int)$_POST["productId"];
               $quantity = (int)$_POST["quantity"];
 
-              if ($customerId && $productId && $quantity) { 
-                $check = 0;
-                $query = 'SELECT * FROM purchases WHERE customerId = '. $customerId . ' AND productId = ' . $productId;
-                $result = mysqli_query($connection, $query);
-                if (!$result) {
-                    echo "<a class='waves-effect waves-light btn' href='index2.php'>Go Back</a><br>";
-                    die("Error.<br>" . mysqli_error($connection));
-                }
-                while ($row = mysqli_fetch_assoc($result)) {
-                    // If purchase exists, value of $purchase_exists will be > 0
-                    $check += $row['customerId'];
-                }
-                mysqli_free_result($result);
-
-                // If already purchased, update value
-                if($check > 0) {
-                    // Makes sure they are adding and not deducting
-                    if($quantity > 0){
-                        $query = 'UPDATE purchases SET quantity = quantity + ' . $quantity . ' WHERE customerId = '. $customerId . ' AND productId = ' . $productId;
-                        if (!mysqli_query($connection, $query)) {
-                            echo "<a class='waves-effect waves-light btn' href='index2.php'>Go Back</a><br>";
-                            die("Error.<br>" . mysqli_error($connection));
-                        }
-                        echo "Your new purchase was successfuly updated.";
-                    }
-                    else {
-                      //  echo "Quantity should be positive!";
-                        echo "<a class='waves-effect waves-light btn' href='index2.php'>Go Back</a><br>";
-                        die("Error - You can only enter positive quantities. Try again.");
-                    }
-                }
-                // Otherwise, insert values into purchases
-                else {
-                    $query = 'INSERT INTO purchases(customerId, productId, quantity) VALUES(' . $customerId . ',' . $productId . ',"' . $quantity . '")';
-                    if (!mysqli_query($connection, $query)) {
-                        echo "<a class='waves-effect waves-light btn' href='index2.php'>Go Back</a><br>";
-                        die("Error - Either the Customer ID or Product ID is incorrect. Try again.<br>" . mysqli_error($connection));
-                    }
-                    echo "Your new purchase was successfuly added.";
-                }
+              $check = 0;
+              $query = 'SELECT * FROM purchases WHERE customerId = '. $customerId . ' AND productId = ' . $productId;
+              $result = mysqli_query($connection, $query);
+              if (!$result) {
+                  echo "<a class='waves-effect waves-light btn' href='index2.php'>Go Back</a><br>";
+                  die("Error.<br>" . mysqli_error($connection));
               }
+              while ($row = mysqli_fetch_assoc($result)) {
+                  // If purchase exists, value of $purchase_exists will be > 0
+                  $check += $row['customerId'];
+              }
+              mysqli_free_result($result);
+
+              // If already purchased, update value
+              if($check > 0) {
+                  // Makes sure they are adding and not deducting
+                  if($quantity > 0){
+                      $query = 'UPDATE purchases SET quantity = quantity + ' . $quantity . ' WHERE customerId = '. $customerId . ' AND productId = ' . $productId;
+                      if (!mysqli_query($connection, $query)) {
+                          echo "<a class='waves-effect waves-light btn' href='index2.php'>Go Back</a><br>";
+                          die("Error.<br>" . mysqli_error($connection));
+                      }
+                      echo "Your new purchase was successfuly updated.";
+                  }
+                  else {
+                    //  echo "Quantity should be positive!";
+                      echo "<a class='waves-effect waves-light btn' href='index2.php'>Go Back</a><br>";
+                      die("Error - You can only enter positive quantities. Try again.");
+                  }
+              }
+              // Otherwise, insert values into purchases
               else {
-                echo '';
+                  $query = 'INSERT INTO purchases(customerId, productId, quantity) VALUES(' . $customerId . ',' . $productId . ',"' . $quantity . '")';
+                  if (!mysqli_query($connection, $query)) {
+                      echo "<a class='waves-effect waves-light btn' href='index2.php'>Go Back</a><br>";
+                      die("Error - Either the Customer ID or Product ID is incorrect. Try again.<br>" . mysqli_error($connection));
+                  }
+                  echo "Your new purchase was successfuly added.";
               }
             ?>
           </div>
