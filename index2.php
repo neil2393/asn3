@@ -167,7 +167,7 @@
                   <label for="agentId">Agent ID</label>
                   </div>
                   <script type="text/javascript">
-                    $('#newpurchase').submit(function() 
+                    $('#newcustomer').submit(function() 
                     {
                         if ($.trim($("#customerId").val()) === "" || $.trim($("#firstName").val()) === "" || $.trim($("#lastName").val()) === "" || $.trim($("#city").val()) === "" || $.trim($("#phoneNumber").val()) === "" || $.trim($("#agentId").val()) === "") {
                             alert('Please enter all fields.');
