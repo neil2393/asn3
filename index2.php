@@ -141,40 +141,31 @@
             <div class="card-content white-text">
               <span class="card-title">New Customer</span>
               <p>Enter the following information to enter a new customer</p>
-              <form action="newcustomer.php" id="newcustomer" method="post">
+              <form action="newcustomer.php" method="post">
                   <div class="input-field blue-grey darken-1">
-                  <input name="customerId" id="customerId" type="text" class="validate">
+                  <input name="customerId" type="text" class="validate">
                   <label for="customerId">Customer ID</label>
                   </div>
                   <div class="input-field blue-grey darken-1">
-                  <input name="firstName" id="firstName" type="text" class="validate">
+                  <input name="firstName" type="text" class="validate">
                   <label for="firstName">First Name</label>
                   </div>
                   <div class="input-field blue-grey darken-1">
-                  <input name="lastName" id="lastName" type="text" class="validate">
+                  <input name="lastName" type="text" class="validate">
                   <label for="lastName">Last Name</label>
                   </div>
                   <div class="input-field blue-grey darken-1">
-                  <input name="city" id="city" type="text" class="validate">
+                  <input name="city" type="text" class="validate">
                   <label for="city">City</label>
                   </div>
                   <div class="input-field blue-grey darken-1">
-                  <input name="phoneNumber" id="phoneNumber" type="text" class="validate">
+                  <input name="phoneNumber" type="text" class="validate">
                   <label for="phoneNumber">Phone Number</label>
                   </div>
                   <div class="input-field blue-grey darken-1">
-                  <input name="agentId" id="agentId" type="text" class="validate">
+                  <input name="agentId" type="text" class="validate">
                   <label for="agentId">Agent ID</label>
                   </div>
-                  <script type="text/javascript">
-                    $('#newcustomer').submit(function() 
-                    {
-                        if ($.trim($("#customerId").val()) === "" || $.trim($("#firstName").val()) === "" || $.trim($("#lastName").val()) === "" || $.trim($("#city").val()) === "" || $.trim($("#phoneNumber").val()) === "" || $.trim($("#agentId").val()) === "") {
-                            alert('Please enter all fields.');
-                        return false;
-                        }
-                    });
-                  </script>
               <button class="btn waves-effect waves-light" type="submit" name="action">Submit
                 <i class="material-icons right">send</i>
               </button>
@@ -251,20 +242,11 @@
             <div class="card-content white-text">
               <span class="card-title">Quantity</span>
               <p>Select a quantity</p>
-              <form action="quantity.php" id="quantityForm" method="post">
+              <form action="quantity.php" method="post">
                   <div class="input-field blue-grey darken-1">
-                  <input name="quantity" id="quantity" type="text" class="validate">
+                  <input name="quantity" type="text" class="validate">
                   <label for="quantity">Quantity</label>
                   </div>
-                  <script type="text/javascript">
-                    $('#quantityForm').submit(function() 
-                    {
-                        if ($.trim($("#quantity").val()) === "") {
-                            alert('Please enter all fields.');
-                        return false;
-                        }
-                    });
-                  </script>
               <button class="btn waves-effect waves-light" type="submit" name="action">Submit
                 <i class="material-icons right">send</i>
               </button>
