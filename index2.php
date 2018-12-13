@@ -143,7 +143,7 @@
               <p>Enter the following information to enter a new customer</p>
               <form action="newcustomer.php" id="newcustomer" method="post">
                   <div class="input-field blue-grey darken-1">
-                  <input name="customerId" id="customerId" type="text" class="validate">
+                  <input name="customerId" id="customerId1" type="text" class="validate">
                   <label for="customerId">Customer ID</label>
                   </div>
                   <div class="input-field blue-grey darken-1">
@@ -166,18 +166,18 @@
                   <input name="agentId" id="agentId" type="text" class="validate">
                   <label for="agentId">Agent ID</label>
                   </div>
+                  <script type="text/javascript">
+                    $("#newcustomer").submit(function() 
+                    {
+                        if ($.trim($("#customerId1").val()) === "" || $.trim($("#firstName").val()) === "" || $.trim($("#lastName").val()) === "" || $.trim($("#city").val()) === "" || $.trim($("#phoneNumber").val()) === "" || $.trim($("#agentId").val()) === "") {
+                            alert('Please enter all fields.');
+                        return false;
+                        }
+                    });
+                  </script>
               <button class="btn waves-effect waves-light" type="submit" name="action">Submit
                 <i class="material-icons right">send</i>
               </button>
-              <script type="text/javascript">
-                $("#newcustomer").submit(function() 
-                {
-                    if ($.trim($("#customerId").val()) === "" || $.trim($("#firstName").val()) === "" || $.trim($("#lastName").val()) === "" || $.trim($("#city").val()) === "" || $.trim($("#phoneNumber").val()) === "" || $.trim($("#agentId").val()) === "") {
-                        alert('Please enter all fields.');
-                    return false;
-                    }
-                });
-              </script>
               </form>
             </div>
           </div>
