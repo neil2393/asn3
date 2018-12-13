@@ -64,7 +64,7 @@
               echo "</table>";
 
             ?>
-            <form action='updatephonenumber.php' method='post'>
+            <form action="updatephonenumber.php" method="post">
                 <div class="input-field blue-grey darken-1">
                 <input name="phoneNumber" type="text" class="validate">
                 <label for="phoneNumber">New Phone Number</label>

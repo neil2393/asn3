@@ -29,20 +29,18 @@
     </div>
     </nav>
 
-    <?php
-      session_start();
-      include 'connectdb.php';
-    ?>
-
     <br>
     <div class="row">
       <div class="col s12 m6">
         <div class="card blue-grey darken-1">
           <div class="card-content white-text">
             <?php
+              session_start();
+              include 'connectdb.php';
+
               $phoneNumber = $_POST["phoneNumber"];
 
-              $query = "UPDATE customers SET phoneNumber = " . $phoneNumber . " WHERE customerId = " . $_SESSION['customerId'];
+              $query = "UPDATE customers SET phoneNumber = '" . $phoneNumber . "'' WHERE customerId = " . $_SESSION['customerId'];
               $result = mysqli_query($connection,$query);
               if (!$result) {
                 die("databases query failed.");
