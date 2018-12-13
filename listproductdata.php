@@ -46,7 +46,7 @@
         <div class="card blue-grey darken-1">
           <div class="card-content white-text">
             <?php
-              $query = "SELECT SUM(purchases.quantity) AS totalPurchases, products.productDescription, (products.costPerItem * SUM(purchases.quantity)) AS totalSales FROM products, purchases WHERE products.productId = purchases.productId AND products.productId = " . $productId;
+              $query = "SELECT SUM(purchases.quantity) AS totalPurchases, products.productId, products.productDescription (products.costPerItem * SUM(purchases.quantity)) AS totalSales FROM products, purchases WHERE products.productId = purchases.productId AND products.productId = " . $productId;
               //$query .= "customers.customerId = " . $selected_category . "))";
               $result = mysqli_query($connection,$query);
               if (!$result) {
