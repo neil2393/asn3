@@ -66,13 +66,13 @@
             ?>
             <form action="updatephonenumber.php" id="updatephonenumber" method="post">
                 <div class="input-field blue-grey darken-1">
-                <input name="phoneNumber" id="phoneNumber" type="text" class="validate">
+                <input name="phoneNumber" id="phoneNumber1" type="text" class="validate">
                 <label for="phoneNumber">New Phone Number</label>
                 </div>
                 <script type="text/javascript">
                   $('#updatephonenumber').submit(function() 
                   {
-                      if ($.trim($("#phoneNumber").val()) === "") {
+                      if ($.trim($("#phoneNumber1").val()) === "") {
                           alert('Please enter all fields.');
                       return false;
                       }
