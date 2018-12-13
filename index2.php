@@ -151,7 +151,7 @@
                   </div>
                   <div class="input-field blue-grey darken-1">
                   <input name="phoneNumber" type="text" class="validate">
-                  <label for="phoneNumber">Phone Number (No dashes)</label>
+                  <label for="phoneNumber">Phone Number</label>
                   </div>
                   <div class="input-field blue-grey darken-1">
                   <input name="agentId" type="text" class="validate">

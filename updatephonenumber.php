@@ -40,12 +40,7 @@
         <div class="card blue-grey darken-1">
           <div class="card-content white-text">
             <?php
-              $phoneNumber = (int)$_POST["phoneNumber"];
-
-              if ($phoneNumber == 0) {
-                echo "<a class='waves-effect waves-light btn' href='index2.php'>Go Back</a><br>";
-                die("Error - Please make sure Phone Number is an integer value and not 0. Try again.");
-              }
+              $phoneNumber = $_POST["phoneNumber"];
 
               $query1 = "UPDATE customers SET phoneNumber = " . $phoneNumber . " WHERE customerId = " . $_SESSION['customerId'];
               $result = mysqli_query($connection,$query1);
