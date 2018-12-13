@@ -42,12 +42,12 @@
               $firstName = $_POST["firstName"];
               $lastName = $_POST["lastName"];
               $city = $_POST["city"];
-              $phoneNumber = (int)$_POST["phoneNumber"];
+              $phoneNumber = $_POST["phoneNumber"];
               $agentId = (int)$_POST["agentId"];
 
-              if ($customerId == 0 || $phoneNumber == 0 || $agentId == 0) {
+              if ($customerId == 0 || $agentId == 0) {
                 echo "<a class='waves-effect waves-light btn' href='index2.php'>Go Back</a><br>";
-                die("Error - Please make sure you complete all values. Please make sure Customer ID, Phone Number, and Agent ID are integer values. Try again.");
+                die("Error - Please make sure you complete all values. Please make sure Customer ID and Agent ID are integer values. Try again.");
               }
 
               $query = "SELECT * FROM customers";
