@@ -57,7 +57,7 @@
               echo "<tr><th>Product ID</th><th>Product Description</th><th>Total # of Purchases</th><th>Cost Per Item</th><th>Total Sales</th>";
               while ($row = mysqli_fetch_assoc($result)) {
                   echo "<tr>";
-                  echo "<td>" . $row["productId"] . "</td><td>" . $row["productDescription"] . "</td><td>" . $row["totalPurchases"] . "</td><td>" . $row["productDescription"] . "</td><td>" . $row["totalSales"] . "</td>";
+                  echo "<td>" . $row["productId"] . "</td><td>" . $row["productDescription"] . "</td><td>" . $row["totalPurchases"] . "</td><td>" . $row["costPerItem"] . "</td><td>" . $row["totalSales"] . "</td>";
                   echo "</tr>";
               }
               mysqli_free_result($result);
