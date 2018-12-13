@@ -251,7 +251,7 @@
             <div class="card-content white-text">
               <span class="card-title">Quantity</span>
               <p>Select a quantity</p>
-              <form action="quantity.php" method="post">
+              <form action="quantity.php" id="quantity" method="post">
                   <div class="input-field blue-grey darken-1">
                   <input name="quantity" id="quantity" type="text" class="validate">
                   <label for="quantity">Quantity</label>
