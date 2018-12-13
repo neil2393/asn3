@@ -40,7 +40,7 @@
 
               $phoneNumber = $_POST["phoneNumber"];
 
-              $query = "UPDATE customers SET phoneNumber = '" . $phoneNumber . "'' WHERE customerId = " . $_SESSION['customerId'];
+              $query = "UPDATE customers SET phoneNumber = '" . $phoneNumber . "' WHERE customerId = " . $_SESSION['customerId'];
               $result = mysqli_query($connection,$query);
               if (!$result) {
                 die("databases query failed.");
