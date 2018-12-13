@@ -64,11 +64,20 @@
               echo "</table>";
 
             ?>
-            <form action="updatephonenumber.php" method="post">
+            <form action="updatephonenumber.php" id="updatephonenumber" method="post">
                 <div class="input-field blue-grey darken-1">
-                <input name="phoneNumber" type="text" class="validate">
+                <input name="phoneNumber" id="phoneNumber" type="text" class="validate">
                 <label for="phoneNumber">New Phone Number</label>
                 </div>
+                <script type="text/javascript">
+                  $('#updatephonenumber').submit(function() 
+                  {
+                      if ($.trim($("#phoneNumber").val()) === "") {
+                          alert('Please enter all fields.');
+                      return false;
+                      }
+                  });
+                </script>
             <button class="btn waves-effect waves-light" type="submit" name="action">Update Phone Number
               <i class="material-icons right">send</i>
             </button>
