@@ -11,7 +11,7 @@ while ($row = mysqli_fetch_assoc($result)) {
     echo "<tr>";
     echo "<td>" . $row["customerId"] . "</td><td>" . $row["firstName"] . "</td><td>" . $row["lastName"] . "</td><td>" . $row["city"] . "</td><td>" . $row["phoneNumber"] . "</td><td>" . $row["agentId"] . "</td><td>";
     if($row['cusimage'] === null) {
-      echo '<a href="displayfile.php?category=' . $row['customer_id'] . '">Upload Image</a><br>';
+      echo '<a href="displayfile.php?category=' . $row['customerId'] . '">Upload Image</a><br>';
     }
     else {
       echo '<img src="' . $row['cusimage'] . '" height="60" width="60">';
