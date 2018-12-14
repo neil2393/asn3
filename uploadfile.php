@@ -40,6 +40,7 @@
 
               $cusimage = $_POST["cusimage"];
               echo $cusimage;
+              echo $_SESSION['customerId'];
 
               $query = 'UPDATE customers SET cusimage = "' . $cusimage . '" WHERE customerId = "'. $_SESSION['customerId'] . '"';
               $result = mysqli_query($connection,$query);
