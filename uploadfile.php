@@ -43,7 +43,8 @@
               $query = 'UPDATE customers SET cusimage = "' . $cusimage . '" WHERE customerId = "'. $_SESSION['customerId'] . '"';
               $result = mysqli_query($connection,$query);
               if (!$result) {
-                die("databases query failed.");
+                echo "<a class='waves-effect waves-light btn' href='index2.php'>Go Back</a><br>";
+                die("databases query failed.<br>" . mysqli_error($connection));
               }
               echo "Your image was successfully uploaded.";
             ?>
