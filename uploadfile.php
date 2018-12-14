@@ -39,6 +39,7 @@
               include 'connectdb.php';
 
               $cusimage = $_POST["cusimage"];
+              echo $cusimage;
 
               $query = 'UPDATE customers SET cusimage = "' . $cusimage . '" WHERE customerId = "'. $_SESSION['customerId'] . '"';
               $result = mysqli_query($connection,$query);

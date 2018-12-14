@@ -36,6 +36,7 @@
 
       $customerId = $_GET['category'];
       $_SESSION['customerId'] = $_GET['category'];
+      $_SESSION['cusimage'] = $_GET['cusimage'];
     ?>
 
     <br>
