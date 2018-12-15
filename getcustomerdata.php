@@ -1,5 +1,7 @@
 <?php
+# Connection to database
 include 'connectdb.php';
+# Query to select customer information ordered by last name
 $query = "SELECT * FROM customers ORDER BY lastName";
 $result = mysqli_query($connection,$query);
 if (!$result) {

@@ -16,30 +16,28 @@
   </head>
 
   <body>
+    <!-- Navigation bar code -->
     <nav>
     <div class="nav-wrapper grey darken-3">
       <a href="#" class="brand-logo center">CS3319 Assignment 3 Neil Patel</a>
-    <!--
-      <ul id="nav-mobile" class="right hide-on-med-and-down">
-        <li><a href="sass.html">Sass</a></li>
-        <li><a href="badges.html">Components</a></li>
-        <li><a href="collapsible.html">JavaScript</a></li>
-      </ul>
-    -->
     </div>
     </nav>
 
     <br>
+    <!-- Card format code -->
     <div class="row">
       <div class="col s12 m6">
         <div class="card blue-grey darken-1">
           <div class="card-content white-text">
             <?php
+              # Connection to database
               session_start();
               include 'connectdb.php';
 
+              # Get new phone number from user using form
               $phoneNumber = $_POST["phoneNumber"];
 
+              # Query to update phone number using user inputted phone number
               $query = "UPDATE customers SET phoneNumber = '" . $phoneNumber . "' WHERE customerId = " . $_SESSION['customerId'];
               $result = mysqli_query($connection,$query);
               if (!$result) {
@@ -56,11 +54,13 @@
     <?php
       echo "<blockquote><h5>Updated Customer " . $_SESSION['customerId'] . " Phone Number Information:</h5></blockquote>"
     ?>
+    <!-- Card format code -->
     <div class="row">
       <div class="col s12 m6">
         <div class="card blue-grey darken-1">
           <div class="card-content white-text">
             <?php
+              # Query to select customer information using user selected customer ID
               $query = "SELECT * FROM customers WHERE customers.customerId = " . $_SESSION['customerId'];
               $result = mysqli_query($connection,$query);
               if (!$result) {
@@ -82,6 +82,7 @@
       </div>
     </div>
 
+    <!-- Go back button -->
     <a class="waves-effect waves-light btn" href="index2.php">Go Back</a>
   </body>
 </html>

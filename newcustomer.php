@@ -16,28 +16,25 @@
   </head>
 
   <body>
+    <!-- Navigation bar code -->
     <nav>
     <div class="nav-wrapper grey darken-3">
       <a href="#" class="brand-logo center">CS3319 Assignment 3 Neil Patel</a>
-    <!--
-      <ul id="nav-mobile" class="right hide-on-med-and-down">
-        <li><a href="sass.html">Sass</a></li>
-        <li><a href="badges.html">Components</a></li>
-        <li><a href="collapsible.html">JavaScript</a></li>
-      </ul>
-    -->
     </div>
     </nav>
 
     <br>
+    <!-- Card format code -->
     <div class="row">
       <div class="col s12 m6">
         <div class="card blue-grey darken-1">
           <div class="card-content white-text">
             <?php
+              # Connection to database
               session_start();
               include 'connectdb.php';
 
+              # Get new customer information from user using form
               $customerId = (int)$_POST["customerId"];
               $firstName = $_POST["firstName"];
               $lastName = $_POST["lastName"];
@@ -45,23 +42,27 @@
               $phoneNumber = $_POST["phoneNumber"];
               $agentId = (int)$_POST["agentId"];
 
+              # Makes sure that customer ID and agent ID are integer values and not 0
               if ($customerId == 0 || $agentId == 0) {
                 echo "<a class='waves-effect waves-light btn' href='index2.php'>Go Back</a><br>";
-                die("Error - Please make sure Customer ID and Agent ID are integer values. Try again.");
+                die("Error - Please make sure Customer ID and Agent ID are integer values and not 0. Try again.");
               }
 
+              # Query to select customer information
               $query = "SELECT * FROM customers";
               $result = mysqli_query($connection,$query);
               if (!$result) {
                 die("databases query failed.");
               }
               while ($row = mysqli_fetch_assoc($result)) {
+                # Makes sure that customer ID is non existent. If it is pre-existing, will give user an error.
                 if ($row["customerId"] == $customerId) {
                   echo "<a class='waves-effect waves-light btn' href='index2.php'>Go Back</a><br>";
                   die("Error - You cannot use an existing customer ID. Try again.");
                 }
               }
               
+              # Query to insert new customer information into customers table
               $query1 = 'INSERT INTO customers (customerId, firstName, lastName, city, phoneNumber, agentId) VALUES ("' . $customerId . '", "' . $firstName . '", "' . $lastName . '", "' . $city . '", "' . $phoneNumber . '", "' . $agentId . '");';
               if (!mysqli_query($connection, $query1)) {
                 echo "<a class='waves-effect waves-light btn' href='index2.php'>Go Back</a><br>";
@@ -77,11 +78,13 @@
     <?php
       echo "<blockquote><h5>Updated Customer Information:</h5></blockquote>"
     ?>
+    <!-- Card format code -->
       <div class="row">
         <div class="col s12 m6">
           <div class="card blue-grey darken-1">
             <div class="card-content white-text">
               <?php
+              # Show updated customer information
               include 'getcustomerdata.php';
               ?>
             </div>
@@ -89,6 +92,7 @@
         </div>
       </div>
 
+    <!-- Go back button -->
     <a class="waves-effect waves-light btn" href="index2.php">Go Back</a>
   </body>
 </html>

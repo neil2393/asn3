@@ -16,8 +16,8 @@
   </head>
 
   <body>
-    <nav>
     <!-- Navigation bar code -->
+    <nav>
     <div class="nav-wrapper grey darken-3">
       <a href="#" class="brand-logo center">CS3319 Assignment 3 Neil Patel</a>
     </div>
@@ -46,7 +46,6 @@
                 die("Error - Cannot delete due to constraints. Customer ID is referenced elsewhere.<br>" . mysqli_error($connection));
               }
               echo 'Your customer was successfully deleted.';
-              mysqli_close($connection);
             ?>
           </div>
         </div>
@@ -54,14 +53,15 @@
     </div>
 
     <?php
-      # Code to show customer data
       echo "<blockquote><h5>Updated Customer Information:</h5></blockquote>"
     ?>
+      <!-- Card format code -->
       <div class="row">
         <div class="col s12 m6">
           <div class="card blue-grey darken-1">
             <div class="card-content white-text">
               <?php
+              # Code to show customer data
               include 'getcustomerdata.php';
               ?>
             </div>
@@ -69,6 +69,7 @@
         </div>
       </div>
 
+    <!-- Go back button -->
     <a class="waves-effect waves-light btn" href="index2.php">Go Back</a>
   </body>
 </html>

@@ -17,23 +17,19 @@
   </head>
 
   <body>
+    <!-- Navigation bar code -->
     <nav>
     <div class="nav-wrapper grey darken-3">
       <a href="#" class="brand-logo center">CS3319 Assignment 3 Neil Patel</a>
-    <!--
-      <ul id="nav-mobile" class="right hide-on-med-and-down">
-        <li><a href="sass.html">Sass</a></li>
-        <li><a href="badges.html">Components</a></li>
-        <li><a href="collapsible.html">JavaScript</a></li>
-      </ul>
-    -->
     </div>
     </nav>
 
     <?php
+      # Connection to database
       session_start();
       include 'connectdb.php';
 
+      # Get customer ID from user
       $customerId = $_GET['category'];
       $_SESSION['customerId'] = $_GET['category'];
     ?>
@@ -42,11 +38,13 @@
     <?php
       echo "<blockquote><h5>Customer " . $customerId . " Phone Number Information:</h5></blockquote>"
     ?>
+    <!-- Card format code -->
     <div class="row">
       <div class="col s12 m4">
         <div class="card blue-grey darken-1">
           <div class="card-content white-text">
             <?php
+              # Query to show customer information using customer ID
               $query = "SELECT * FROM customers WHERE customers.customerId = " . $customerId;
               $result = mysqli_query($connection,$query);
               if (!$result) {
@@ -62,13 +60,15 @@
               }
               mysqli_free_result($result);
               echo "</table>";
-
             ?>
+
+            <!-- Form that allows user to input new phone number -->
             <form action="updatephonenumber.php" id="updatephonenumber" method="post">
                 <div class="input-field blue-grey darken-1">
                 <input name="phoneNumber" id="phoneNumber1" type="text" class="validate">
                 <label for="phoneNumber">New Phone Number</label>
                 </div>
+                <!-- Script that ensures no empty fields -->
                 <script type="text/javascript">
                   $('#updatephonenumber').submit(function() 
                   {
@@ -87,6 +87,7 @@
       </div>
     </div>
 
+    <!-- Go back button -->
     <a class="waves-effect waves-light btn" href="index2.php">Go Back</a>
   </body>
 </html>

@@ -16,32 +16,30 @@
   </head>
 
   <body>
+    <!-- Navigation bar code -->
     <nav>
     <div class="nav-wrapper grey darken-3">
       <a href="#" class="brand-logo center">CS3319 Assignment 3 Neil Patel</a>
-    <!--
-      <ul id="nav-mobile" class="right hide-on-med-and-down">
-        <li><a href="sass.html">Sass</a></li>
-        <li><a href="badges.html">Components</a></li>
-        <li><a href="collapsible.html">JavaScript</a></li>
-      </ul>
-    -->
     </div>
     </nav>
 
     <br>
+    <!-- Card format code -->
     <div class="row">
       <div class="col s12 m6">
         <div class="card blue-grey darken-1">
           <div class="card-content white-text">
             <?php
+              # Connection to database
               session_start();
               include 'connectdb.php';
 
+              # Get customer ID, product ID, and quantity from user using form
               $customerId = (int)$_POST["customerId"];
               $productId = (int)$_POST["productId"];
               $quantity = (int)$_POST["quantity"];
 
+              # Check variable used to see if purchase is already pre-existing
               $check = 0;
               $query = 'SELECT * FROM purchases WHERE customerId = '. $customerId . ' AND productId = ' . $productId;
               $result = mysqli_query($connection, $query);
@@ -49,15 +47,15 @@
                   echo "<a class='waves-effect waves-light btn' href='index2.php'>Go Back</a><br>";
                   die("Error.<br>" . mysqli_error($connection));
               }
+              # Check variable will be >0 if purchase is pre-existing
               while ($row = mysqli_fetch_assoc($result)) {
-                  // If purchase exists, value of $purchase_exists will be > 0
                   $check += $row['customerId'];
               }
               mysqli_free_result($result);
 
-              // If already purchased, update value
+              # Update value if purchase is pre-existing
               if($check > 0) {
-                  // Makes sure they are adding and not deducting
+                  # Only allows user to add values, not subtract
                   if($quantity > 0){
                       $query = 'UPDATE purchases SET quantity = quantity + ' . $quantity . ' WHERE customerId = '. $customerId . ' AND productId = ' . $productId;
                       if (!mysqli_query($connection, $query)) {
@@ -67,12 +65,11 @@
                       echo "Your new purchase was successfuly updated.";
                   }
                   else {
-                    //  echo "Quantity should be positive!";
                       echo "<a class='waves-effect waves-light btn' href='index2.php'>Go Back</a><br>";
                       die("Error - You can only enter positive quantities. Try again.");
                   }
               }
-              // Otherwise, insert values into purchases
+              # Inputs information collected from user if there is no pre-existing purchase
               else {
                   $query = 'INSERT INTO purchases(customerId, productId, quantity) VALUES(' . $customerId . ',' . $productId . ',"' . $quantity . '")';
                   if (!mysqli_query($connection, $query)) {
@@ -87,24 +84,26 @@
       </div>
     </div>
 
-
     <?php
       echo "<blockquote><h5>Updated Customer " . $customerId . " Purchase Information:</h5></blockquote>"
     ?>
+    <!-- Card format code -->
     <div class="row">
       <div class="col s12 m6">
         <div class="card blue-grey darken-1">
           <div class="card-content white-text">
             <?php
+              # Connection to database
               session_start();
               include 'connectdb.php';
 
+              # Get customer ID, product ID, and quantity from user using form
               $customerId = (int)$_POST["customerId"];
               $productId = (int)$_POST["productId"];
               $quantity = (int)$_POST["quantity"];
 
+              # Query to show updated purchase information
               $query = "SELECT * FROM products, purchases, customers WHERE products.productId = purchases.productId AND purchases.customerId = customers.customerId AND customers.customerId = " . $customerId;
-              //$query .= "customers.customerId = " . $customerId . ")";
               $result = mysqli_query($connection,$query);
               if (!$result) {
                   die("databases query failed.");
@@ -124,6 +123,7 @@
       </div>
     </div>
 
+    <!-- Go back button -->
     <a class="waves-effect waves-light btn" href="index2.php">Go Back</a>
   </body>
 </html>

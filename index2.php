@@ -17,30 +17,27 @@
   </head>
 
   <body>
+    <!-- Navigation bar code -->
     <nav>
     <div class="nav-wrapper grey darken-3">
       <a href="#" class="brand-logo center">CS3319 Assignment 3 Neil Patel</a>
-    <!--
-      <ul id="nav-mobile" class="right hide-on-med-and-down">
-        <li><a href="sass.html">Sass</a></li>
-        <li><a href="badges.html">Components</a></li>
-        <li><a href="collapsible.html">JavaScript</a></li>
-      </ul>
-    -->
     </div>
     </nav>
 
     <?php
-    include 'connectdb.php';
+      # Connection to database
+      include 'connectdb.php';
     ?> 
 
       <br>
       <blockquote><h5>Customer Information:</h5></blockquote>
+      <!-- Card format code -->
       <div class="row">
         <div class="col s12 m8">
           <div class="card blue-grey darken-1">
             <div class="card-content white-text">
               <?php
+              # Show customer information using getcustomerdata.php code
               include 'getcustomerdata.php';
               ?>
             </div>
@@ -49,6 +46,7 @@
       </div>
 
       <blockquote><h5>Products that a Customer has Purchased:</h5></blockquote>
+      <!-- Card format code -->
       <div class="row">
         <div class="col s12 m6">
           <div class="card blue-grey darken-1">
@@ -62,6 +60,7 @@
                 <!-- Dropdown Structure -->
                 <ul id='dropdown1' class='dropdown-content'>
                   <?php
+                    # Query to select customer ID from user
                     $query = "SELECT * FROM customers";
                     $result = mysqli_query($connection,$query);
                     if (!$result) {
@@ -79,6 +78,7 @@
       </div>
 
       <blockquote><h5>Product Information:</h5></blockquote>
+      <!-- Card format code -->
       <div class="row">
         <div class="col s12 m6">
           <div class="card blue-grey darken-1">
@@ -86,6 +86,7 @@
               <span class="card-title">Product List</span>
               <p>Sort product information in the following orders</p>
             </div>
+            <!-- Buttons to sort product information by -->
             <div class="card-action">
               <a class="waves-effect waves-light btn" href="getproductdata.php?category=ascDesc">Ascending Description</a>
               <a class="waves-effect waves-light btn" href="getproductdata.php?category=descDesc">Descending Description</a>
@@ -97,12 +98,14 @@
       </div>
 
       <blockquote><h5>Insert New Purchase Information:</h5></blockquote>
+      <!-- Card format code -->
       <div class="row">
         <div class="col s12 m6">
           <div class="card blue-grey darken-1">
             <div class="card-content white-text">
               <span class="card-title">New Purchase</span>
               <p>Enter the following information to enter a new purchase</p>
+              <!-- Form that allows user to input customer ID, product ID, and quantity for new purchases -->
               <form action="newpurchase.php" id="newpurchase" method="post">
                   <div class="input-field blue-grey darken-1">
                   <input name="customerId" id="customerId" type="text" class="validate">
@@ -116,6 +119,7 @@
                   <input name="quantity" id="quantity" type="text" class="validate">
                   <label for="quantity">Quantity</label>
                   </div>
+                  <!-- Script that ensures no empty fields -->
                   <script type="text/javascript">
                     $('#newpurchase').submit(function() 
                     {
@@ -135,12 +139,14 @@
       </div>
 
       <blockquote><h5>Insert New Customer Information:</h5></blockquote>
+      <!-- Card format code -->
       <div class="row">
         <div class="col s12 m6">
           <div class="card blue-grey darken-1">
             <div class="card-content white-text">
               <span class="card-title">New Customer</span>
               <p>Enter the following information to enter a new customer</p>
+              <!-- Form that allows user to input data for new customer information -->
               <form action="newcustomer.php" id="newcustomer" method="post">
                   <div class="input-field blue-grey darken-1">
                   <input name="customerId" id="customerId1" type="text" class="validate">
@@ -166,6 +172,7 @@
                   <input name="agentId" id="agentId" type="text" class="validate">
                   <label for="agentId">Agent ID</label>
                   </div>
+                  <!-- Script that ensures no empty fields -->
                   <script type="text/javascript">
                     $("#newcustomer").submit(function() 
                     {
@@ -185,6 +192,7 @@
       </div>
 
       <blockquote><h5>Update Customer Phone Number Information:</h5></blockquote>
+      <!-- Card format code -->
       <div class="row">
         <div class="col s12 m6">
           <div class="card blue-grey darken-1">
@@ -198,6 +206,7 @@
                 <!-- Dropdown Structure -->
                 <ul id='dropdown2' class='dropdown-content'>
                   <?php
+                    # Query to select customer ID from user
                     $query = "SELECT * FROM customers";
                     $result = mysqli_query($connection,$query);
                     if (!$result) {
@@ -215,6 +224,7 @@
       </div>
 
       <blockquote><h5>Delete Customer Information:</h5></blockquote>
+      <!-- Card format code -->
       <div class="row">
         <div class="col s12 m6">
           <div class="card blue-grey darken-1">
@@ -228,6 +238,7 @@
                 <!-- Dropdown Structure -->
                 <ul id='dropdown3' class='dropdown-content'>
                   <?php
+                    # Query to select customer ID from user
                     $query = "SELECT * FROM customers";
                     $result = mysqli_query($connection,$query);
                     if (!$result) {
@@ -245,17 +256,20 @@
       </div>
 
       <blockquote><h5>Customers That Have Purchased More Than a Given Quantity of Any Product:</h5></blockquote>
+      <!-- Card format code -->
       <div class="row">
         <div class="col s12 m6">
           <div class="card blue-grey darken-1">
             <div class="card-content white-text">
               <span class="card-title">Quantity</span>
               <p>Select a quantity</p>
+              <!-- Form that allows user to input a quantity to see which customers have purchased more than that given quantity -->
               <form action="quantity.php" id="quantity1" method="post">
                   <div class="input-field blue-grey darken-1">
                   <input name="quantity" id="quantity2" type="text" class="validate">
                   <label for="quantity">Quantity</label>
                   </div>
+                  <!-- Script that ensures no empty fields -->
                   <script type="text/javascript">
                     $('#quantity1').submit(function() 
                     {
@@ -275,6 +289,7 @@
       </div>
 
       <blockquote><h5>Products That Have Not Been Purchased:</h5></blockquote>
+      <!-- Card format code -->
       <div class="row">
         <div class="col s12 m6">
           <div class="card blue-grey darken-1">
@@ -282,6 +297,7 @@
               <span class="card-title">Product List</span>
               <p>Click the button to see products that have not been purchased</p>
             </div>
+            <!-- Button to see unpurchased products -->
             <div class="card-action">
               <a class="waves-effect waves-light btn" href="unpurchasedproducts.php">Unpurchased Products</a>
             </div>
@@ -290,6 +306,7 @@
       </div>
 
       <blockquote><h5>Total Number of Purchases and Sales for a Particular Product:</h5></blockquote>
+      <!-- Card format code -->
       <div class="row">
         <div class="col s12 m6">
           <div class="card blue-grey darken-1">
@@ -303,6 +320,7 @@
                 <!-- Dropdown Structure -->
                 <ul id='dropdown4' class='dropdown-content'>
                   <?php
+                    # Query to select product ID from user
                     $query = "SELECT * FROM products";
                     $result = mysqli_query($connection,$query);
                     if (!$result) {
@@ -320,6 +338,7 @@
       </div>
 
     <?php
+      # Close connection to database
       mysqli_close($connection);
     ?>
 
@@ -328,10 +347,14 @@
 
 <?php
 /*
+Code to access VM -
+
 ssh -i ~/.ssh/cs3319-vm144.pem vm144@cs3319.gaul.csd.uwo.ca
 ssh centos@vm144
 mysql -u root -p
 cd /var/www/html
+
+Code to git push to github repo -
 
 git add .
 git commit -m "push scripts files"

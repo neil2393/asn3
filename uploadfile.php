@@ -16,30 +16,28 @@
   </head>
 
   <body>
+    <!-- Navigation bar code -->
     <nav>
     <div class="nav-wrapper grey darken-3">
       <a href="#" class="brand-logo center">CS3319 Assignment 3 Neil Patel</a>
-    <!--
-      <ul id="nav-mobile" class="right hide-on-med-and-down">
-        <li><a href="sass.html">Sass</a></li>
-        <li><a href="badges.html">Components</a></li>
-        <li><a href="collapsible.html">JavaScript</a></li>
-      </ul>
-    -->
     </div>
     </nav>
 
     <br>
+    <!-- Card format code -->
     <div class="row">
       <div class="col s12 m6">
         <div class="card blue-grey darken-1">
           <div class="card-content white-text">
             <?php
+              # Connection to database
               session_start();
               include 'connectdb.php';
 
+              # Get customer image URL from user
               $cusimage = $_POST["cusimage"];
 
+              # Update customer image for specific customer ID using user inputted customer image URL
               $query = 'UPDATE customers SET cusimage = "' . $cusimage . '" WHERE customerId = "'. $_SESSION['customerId'] . '"';
               $result = mysqli_query($connection,$query);
               if (!$result) {
@@ -53,40 +51,7 @@
       </div>
     </div>
 
-
-    <?php
-    #  echo "<blockquote><h5>Updated Customer " . $_SESSION['customerId'] . " Phone Number Information:</h5></blockquote>"
-    ?>
-  <!--
-    <div class="row">
-      <div class="col s12 m6">
-        <div class="card blue-grey darken-1">
-          <div class="card-content white-text">
-            <?php
-            /*
-              $query = "SELECT * FROM customers WHERE customers.customerId = " . $_SESSION['customerId'];
-              $result = mysqli_query($connection,$query);
-              if (!$result) {
-                  echo "<a class='waves-effect waves-light btn' href='index2.php'>Go Back</a><br>";
-                  die("databases query failed.");
-              }
-              echo "<table>";
-              echo "<tr><th>Customer ID</th><th>Phone Number</th></tr>";
-              while ($row = mysqli_fetch_assoc($result)) {
-                  echo "<tr>";
-                  echo "<td>" . $row["customerId"] . "</td><td>" . $row["phoneNumber"] . "</td>";
-                  echo "</tr>";
-              }
-              mysqli_free_result($result);
-              echo "</table>";
-              */
-            ?>
-          </div>
-        </div>
-      </div>
-    </div>
-    -->
-
+    <!-- Go back button -->
     <a class="waves-effect waves-light btn" href="index2.php">Go Back</a>
   </body>
 </html>

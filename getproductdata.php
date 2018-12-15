@@ -16,45 +16,48 @@
   </head>
 
   <body>
+    <!-- Navigation bar code -->
     <nav>
     <div class="nav-wrapper grey darken-3">
       <a href="#" class="brand-logo center">CS3319 Assignment 3 Neil Patel</a>
-    <!--
-      <ul id="nav-mobile" class="right hide-on-med-and-down">
-        <li><a href="sass.html">Sass</a></li>
-        <li><a href="badges.html">Components</a></li>
-        <li><a href="collapsible.html">JavaScript</a></li>
-      </ul>
-    -->
     </div>
     </nav>
 
     <br>
     <blockquote><h5>Product Information:</h5></blockquote>
+    <!-- Card format code -->
     <div class="row">
       <div class="col s12 m6">
         <div class="card blue-grey darken-1">
           <div class="card-content white-text">
             <?php
+              # Connection to database
               session_start();
               include 'connectdb.php';
 
+              # Get type of order to sort product information from user
               $selected_category = $_GET['category'];
               $_SESSION['selected_category'] = $_GET['category'];
+
+              # Query to select product information in a particular order
               $query = "SELECT * FROM products ORDER BY ";
 
+              # Sort by ascending description
               if ($selected_category == "ascDesc")
               {
                 $query .= "productDescription ASC";
               }
+              # Sort by descending description
               elseif ($selected_category == "descDesc")
               {
                 $query .= "productDescription DESC";
               }
+              # Sort by ascending price
               elseif ($selected_category == "ascPrice")
               {
                 $query .= "costPerItem ASC";
               }
+              # Sort by descending price
               elseif ($selected_category == "descPrice")
               {
                 $query .= "costPerItem DESC";
@@ -79,6 +82,7 @@
       </div>
     </div>
 
+    <!-- Go back button -->
     <a class="waves-effect waves-light btn" href="index2.php">Go Back</a>
   </body>
 </html>
